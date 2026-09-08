@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { Layout } from '@/components/Layout'
 import { BlockRenderer } from '@/components/BlockRenderer'
 import { Seo } from '@/components/Seo'
+import { ViewDeck } from '@/components/ViewDeck'
 import { getCaseStudy } from '@/content/caseStudies'
 import { useTheme } from '@/theme/ThemeContext'
 
@@ -41,6 +42,14 @@ export function CaseStudy() {
         <p className="text-lg mt-6 leading-relaxed max-w-[62ch]" style={{ color: 'var(--text)' }}>
           {caseStudy.summary}
         </p>
+
+        {caseStudy.decks && caseStudy.decks.length > 0 && (
+          <div className="flex flex-wrap gap-3 mt-6">
+            {caseStudy.decks.map((d) => (
+              <ViewDeck key={d.href} href={d.href} label={d.label} />
+            ))}
+          </div>
+        )}
 
         <div className="mt-10">
           <BlockRenderer blocks={caseStudy.blocks} />

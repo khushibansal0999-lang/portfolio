@@ -23,6 +23,7 @@ export const projects: Project[] = [
     stack: ['React', 'Lovable', 'Supabase', 'TMDB API'],
     liveUrl: 'https://cine-verseai.lovable.app',
     cover: '/projects/cineverse-cover.webp',
+    decks: [{ href: '/decks/cineverse-prd.pdf', label: 'View PRD' }],
     hasDetail: true,
     timeframe: 'July 2026',
     whyBuilt:
@@ -79,6 +80,7 @@ export const projects: Project[] = [
     hasDetail: true,
     timeframe: 'July 2026',
     cover: '/projects/duolingo-streak.webp',
+    decks: [{ href: '/decks/duolingo-teardown-deck.pdf', label: 'View full deck' }],
     whyBuiltLabel: 'Scope & lens',
     whyBuilt:
       'Source: 13 screens captured from a single live session on a real account — Diamond league, 500-day streak, 50,367 lifetime XP. That profile is a highly engaged power user, so the analysis reads its mechanics accordingly, not as typical new-user behavior. Lens: engagement and retention loops — the mechanics that pull a user back tomorrow, not a feature-by-feature UI critique. Out of scope: pricing/paywall, onboarding, and course content quality, none of which appeared in this session. The framework: every screen maps back to one of four reinforcing systems — Streak (a loss-averse daily habit protected by one number), XP & Gems (a variable-reward currency with combos and multipliers on every action), Social (friend streaks, nudges, and a feed that makes progress visible to others), and Push back in (quests and leagues that expire, built to justify tomorrow\'s session). Two findings from the walkthrough: the 500-day milestone gets a full-screen celebration with the same visual weight most apps reserve for onboarding or a purchase confirmation, and a "Show it off" share button converts an internal engagement stat into external social proof — recruiting the user as a free marketing channel. Separately, the Diamond league (the terminal tier, nothing left to promote to) still drives return visits through a 5-day countdown that resets on a fixed clock, independent of the daily streak — and a rival\'s +540 XP badge is deliberately surfaced just above the user\'s own position, not the unreachable #1, because a beatable target nudges harder than an aspirational one.',

@@ -11,6 +11,10 @@ export const caseStudies: CaseStudy[] = [
     tags: ['0→1', 'AI/voice', 'PRD', 'Prototype'],
     isIndependent: true,
     heroMetric: { label: 'Target D7 voice repeat use', value: '18% → 35%' },
+    decks: [
+      { href: '/decks/vrx-prd.pdf', label: 'View PRD' },
+      { href: '/decks/vrx-wireframes.pdf', label: 'View wireframes' },
+    ],
     blocks: [
       { kind: 'heading', text: 'Context' },
       {
@@ -81,6 +85,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ['Research', 'Problem framing', 'KPI strategy'],
     isIndependent: true,
     heroMetric: { label: 'Tried voice, never returned', value: '68%' },
+    decks: [{ href: '/decks/voice-adoption-research-deck.pdf', label: 'View research deck' }],
     blocks: [
       { kind: 'heading', text: 'Context' },
       {

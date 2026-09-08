@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { Layout } from '@/components/Layout'
 import { Seo } from '@/components/Seo'
+import { ViewDeck } from '@/components/ViewDeck'
 import { getProject } from '@/content/projects'
 
 export function ProjectDetail() {
@@ -35,7 +36,7 @@ export function ProjectDetail() {
 
         <p className="text-lg mt-6 leading-relaxed max-w-[62ch]">{project.summary}</p>
 
-        <div className="flex gap-4 mt-6">
+        <div className="flex flex-wrap gap-3 mt-6">
           {project.liveUrl && (
             <a
               href={project.liveUrl}
@@ -47,6 +48,9 @@ export function ProjectDetail() {
               Open live ↗
             </a>
           )}
+          {project.decks?.map((d) => (
+            <ViewDeck key={d.href} href={d.href} label={d.label} />
+          ))}
         </div>
 
         {project.screens && project.screens.length > 0 && (

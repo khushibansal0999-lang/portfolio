@@ -11,6 +11,11 @@ export type Block =
   | { kind: 'list'; items: string[] }
   | { kind: 'link'; href: string; text: string }
 
+export interface Deck {
+  href: string
+  label: string
+}
+
 export interface CaseStudy {
   slug: string
   title: string
@@ -21,6 +26,7 @@ export interface CaseStudy {
   isIndependent: boolean
   heroMetric?: { label: string; value: string }
   blocks: Block[]
+  decks?: Deck[]
 }
 
 export interface RoleEntry {
@@ -62,4 +68,5 @@ export interface Project {
   lesson?: string
   lessonLabel?: string
   screens?: { src: string; alt: string; caption?: string }[]
+  decks?: Deck[]
 }
