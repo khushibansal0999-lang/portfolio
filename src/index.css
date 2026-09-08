@@ -7,9 +7,9 @@
   Components must always read var(--…) — never a hardcoded color — so skinning a new theme
   never means touching component code, only this file + labels.ts.
 
-  Color is intentionally shared across all four themes ("Country garden" — ivory, lavender,
-  olive, deep purple). The four themes differ by structure, type, motif, and labels only
-  (release notes vs. dashboard vs. path vs. editorial) — not by color scheme.
+  Color is intentionally shared across all four themes ("Ink wash" — charcoal, cool gray,
+  soft ivory, slate blue-gray). The four themes differ by structure, type, motif, and
+  labels only (release notes vs. dashboard vs. path vs. editorial) — not by color scheme.
 */
 
 :root {
@@ -20,22 +20,22 @@
   --font-about: 'Jost', system-ui, sans-serif;
 
   /*
-    "Country garden" palette — ivory, lavender, olive, deep purple, per the reference
-    image. Deep purple (#723480) is the reference's own connecting accent and already
-    clears WCAG AA as text on ivory (~8.2:1), so --accent doubles as --accent-strong
-    here — no darkened derivative needed. --text is one addition beyond the four
-    reference swatches: a dark aubergine neutral, so body copy stays visually distinct
-    from the purple accent rather than sharing its color. Olive is muted/secondary text
-    and fills; lavender is the soft background tint for cards/badges/borders.
+    "Ink wash" palette — charcoal, cool gray, soft ivory, slate blue-gray, per the
+    reference image (explicitly recommended there for design portfolios). Slate
+    blue-gray (#6D8196) fails WCAG AA as text on ivory (~3.95:1), so --accent-strong
+    is a darkened slate (#435364) reserved for anywhere the color is used as *text*
+    (links, metric values, CTA button fills) — --accent stays the true reference
+    slate and is used for fills, borders, and badges only. Charcoal and cool gray
+    are both true reference colors, used directly for body text and borders.
   */
   --bg: #ffffe3;
-  --bg-elevated: #fcfbff;
-  --text: #241129;
-  --text-muted: #808034;
-  --accent: #723480;
-  --accent-strong: #723480;
-  --accent-soft: #dbd4ff;
-  --border: #c7beef;
+  --bg-elevated: #fafaf6;
+  --text: #4a4a4a;
+  --text-muted: #6d8196;
+  --accent: #6d8196;
+  --accent-strong: #435364;
+  --accent-soft: #e4e7ea;
+  --border: #cbcbcb;
   --radius: 0.25rem;
   --shadow: none;
 
@@ -55,13 +55,13 @@ body {
   --font-about: var(--font-heading);
 
   --bg: #ffffe3;
-  --bg-elevated: #fcfbff;
-  --text: #241129;
-  --text-muted: #808034;
-  --accent: #723480;
-  --accent-strong: #723480;
-  --accent-soft: #dbd4ff;
-  --border: #c7beef;
+  --bg-elevated: #fafaf6;
+  --text: #4a4a4a;
+  --text-muted: #6d8196;
+  --accent: #6d8196;
+  --accent-strong: #435364;
+  --accent-soft: #e4e7ea;
+  --border: #cbcbcb;
   --radius: 0.375rem;
   --shadow: none;
 
@@ -75,15 +75,15 @@ body {
   --font-about: var(--font-heading);
 
   --bg: #ffffe3;
-  --bg-elevated: #fcfbff;
-  --text: #241129;
-  --text-muted: #808034;
-  --accent: #723480;
-  --accent-strong: #723480;
-  --accent-soft: #dbd4ff;
-  --border: #c7beef;
+  --bg-elevated: #fafaf6;
+  --text: #4a4a4a;
+  --text-muted: #6d8196;
+  --accent: #6d8196;
+  --accent-strong: #435364;
+  --accent-soft: #e4e7ea;
+  --border: #cbcbcb;
   --radius: 0.5rem;
-  --shadow: 0 1px 2px rgba(36, 17, 41, 0.08);
+  --shadow: 0 1px 2px rgba(74, 74, 74, 0.08);
 
   color-scheme: light;
 }
@@ -95,13 +95,13 @@ body {
   --font-about: var(--font-heading);
 
   --bg: #ffffe3;
-  --bg-elevated: #fcfbff;
-  --text: #241129;
-  --text-muted: #808034;
-  --accent: #723480;
-  --accent-strong: #723480;
-  --accent-soft: #dbd4ff;
-  --border: #c7beef;
+  --bg-elevated: #fafaf6;
+  --text: #4a4a4a;
+  --text-muted: #6d8196;
+  --accent: #6d8196;
+  --accent-strong: #435364;
+  --accent-soft: #e4e7ea;
+  --border: #cbcbcb;
   --radius: 999px;
   --shadow: none;
 
