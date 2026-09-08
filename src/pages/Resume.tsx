@@ -56,7 +56,7 @@ export function Resume() {
                 <ul className="mt-2 space-y-1.5">
                   {role.bullets.map((bullet, i) => (
                     <li key={i} className="text-sm leading-relaxed flex gap-2">
-                      <span style={{ color: 'var(--accent)' }}>·</span>
+                      <span style={{ color: 'var(--accent-strong)' }}>·</span>
                       <span>{bullet.text}</span>
                     </li>
                   ))}

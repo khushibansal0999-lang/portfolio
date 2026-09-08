@@ -28,7 +28,7 @@ export function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
       </div>
 
       {caseStudy.heroMetric && (
-        <p className="text-2xl font-semibold mt-3" style={{ color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}>
+        <p className="text-2xl font-semibold mt-3" style={{ color: 'var(--accent-strong)', fontFamily: 'var(--font-heading)' }}>
           {caseStudy.heroMetric.value}
           <span className="text-sm font-normal ml-2" style={{ color: 'var(--text-muted)' }}>
             {caseStudy.heroMetric.label}
@@ -45,7 +45,7 @@ export function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
           <span
             key={tag}
             className="text-xs px-2 py-0.5 rounded-full"
-            style={{ background: 'var(--accent-soft)', color: 'var(--accent)' }}
+            style={{ background: 'var(--accent-soft)', color: 'var(--accent-strong)' }}
           >
             {tag}
           </span>

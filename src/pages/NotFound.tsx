@@ -10,7 +10,7 @@ export function NotFound() {
         <h1 className="text-2xl font-medium mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
           Page not found
         </h1>
-        <Link to="/" className="hover:underline" style={{ color: 'var(--accent)' }}>
+        <Link to="/" className="hover:underline" style={{ color: 'var(--accent-strong)' }}>
           ← Back home
         </Link>
       </div>

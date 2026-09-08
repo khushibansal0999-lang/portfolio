@@ -16,7 +16,7 @@ export function Home() {
       <section className="max-w-3xl mx-auto px-6 pt-16 pb-10">
         <p
           className="text-xs uppercase tracking-widest mb-4"
-          style={{ color: 'var(--accent)' }}
+          style={{ color: 'var(--accent-strong)' }}
         >
           {t.statusBadge}
         </p>
@@ -38,7 +38,7 @@ export function Home() {
           <a
             href="mailto:khushi.bansal0999@gmail.com"
             className="text-sm font-medium px-4 py-2 rounded"
-            style={{ background: 'var(--accent)', color: 'var(--bg)', borderRadius: 'var(--radius)' }}
+            style={{ background: 'var(--accent)', color: 'var(--text)', borderRadius: 'var(--radius)' }}
           >
             {t.home.ctaEmail}
           </a>

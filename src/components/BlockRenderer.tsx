@@ -67,7 +67,7 @@ function BlockItem({ block }: { block: Block }) {
               <dt className="text-xs uppercase tracking-wide" style={{ color: 'var(--text-muted)' }}>
                 {item.label}
               </dt>
-              <dd className="text-lg font-semibold mt-1" style={{ color: 'var(--accent)', fontFamily: 'var(--font-heading)' }}>
+              <dd className="text-lg font-semibold mt-1" style={{ color: 'var(--accent-strong)', fontFamily: 'var(--font-heading)' }}>
                 {item.value}
               </dd>
               {item.baseline && (
@@ -84,7 +84,7 @@ function BlockItem({ block }: { block: Block }) {
         <ul className="space-y-2 max-w-[68ch]">
           {block.items.map((item, i) => (
             <li key={i} className="flex gap-2 leading-relaxed">
-              <span style={{ color: 'var(--accent)' }}>—</span>
+              <span style={{ color: 'var(--accent-strong)' }}>—</span>
               <span>{item}</span>
             </li>
           ))}
@@ -93,7 +93,7 @@ function BlockItem({ block }: { block: Block }) {
     case 'link': {
       const isExternal = block.href.startsWith('http')
       const className = 'inline-block font-medium hover:underline'
-      const style = { color: 'var(--accent)' }
+      const style = { color: 'var(--accent-strong)' }
       return isExternal ? (
         <a href={block.href} target="_blank" rel="noreferrer" className={className} style={style}>
           {block.text}

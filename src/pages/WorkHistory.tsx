@@ -23,7 +23,7 @@ export function WorkHistory() {
                 style={{ background: role.isCurrent ? 'var(--accent)' : 'var(--border)' }}
               />
               {role.isCurrent && (
-                <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: 'var(--accent)' }}>
+                <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: 'var(--accent-strong)' }}>
                   {t.workHistory.nowLabel}
                 </p>
               )}
@@ -42,11 +42,11 @@ export function WorkHistory() {
               <ul className="mt-4 space-y-2">
                 {role.bullets.map((bullet, i) => (
                   <li key={i} className="text-sm leading-relaxed flex gap-2">
-                    <span style={{ color: 'var(--accent)' }}>—</span>
+                    <span style={{ color: 'var(--accent-strong)' }}>—</span>
                     <span>
                       {bullet.text}{' '}
                       {bullet.caseStudySlug && (
-                        <Link to={`/work/${bullet.caseStudySlug}`} className="hover:underline" style={{ color: 'var(--accent)' }}>
+                        <Link to={`/work/${bullet.caseStudySlug}`} className="hover:underline" style={{ color: 'var(--accent-strong)' }}>
                           Case study →
                         </Link>
                       )}

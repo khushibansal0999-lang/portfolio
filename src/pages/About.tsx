@@ -106,7 +106,7 @@ export function About() {
           </p>
         </section>
 
-        <section className="flex gap-6 text-sm pt-2" style={{ color: 'var(--accent)' }}>
+        <section className="flex gap-6 text-sm pt-2" style={{ color: 'var(--accent-strong)' }}>
           <Link to="/work-history" className="hover:underline">
             The full timeline →
           </Link>
@@ -116,7 +116,7 @@ export function About() {
           <a
             href="mailto:khushi.bansal0999@gmail.com"
             className="text-sm font-medium px-4 py-2 rounded"
-            style={{ background: 'var(--accent)', color: 'var(--bg)', borderRadius: 'var(--radius)' }}
+            style={{ background: 'var(--accent)', color: 'var(--text)', borderRadius: 'var(--radius)' }}
           >
             Email me
           </a>
