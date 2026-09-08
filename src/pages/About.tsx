@@ -9,9 +9,9 @@ export function About() {
         title="About"
         description="Engineer-turned-PM — how I got here and how I work."
       />
-      <article className="max-w-2xl mx-auto px-6 pt-12 pb-24 space-y-10">
+      <article className="max-w-2xl mx-auto px-6 pt-12 pb-24 space-y-10" style={{ fontFamily: 'var(--font-about)' }}>
         <header>
-          <h1 className="text-3xl font-medium" style={{ fontFamily: 'var(--font-heading)' }}>
+          <h1 className="text-3xl font-medium">
             About
           </h1>
           <p className="text-lg mt-4 leading-relaxed">
