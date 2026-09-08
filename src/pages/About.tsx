@@ -110,6 +110,9 @@ export function About() {
           <Link to="/work-history" className="hover:underline">
             The full timeline →
           </Link>
+          <Link to="/projects" className="hover:underline">
+            What I've built on my own →
+          </Link>
         </section>
 
         <section className="flex gap-4 pt-4">

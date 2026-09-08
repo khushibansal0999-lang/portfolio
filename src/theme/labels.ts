@@ -13,6 +13,7 @@ interface Labels {
   nav: {
     work: string
     about: string
+    projects: string
     resume: string
   }
   home: {
@@ -33,28 +34,28 @@ interface Labels {
 
 export const labels: Record<ThemeId, Labels> = {
   editorial: {
-    nav: { work: 'Work', about: 'About', resume: 'Resume' },
+    nav: { work: 'Work', about: 'About', projects: 'Projects', resume: 'Resume' },
     home: { workHeading: 'Case studies', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'By the numbers', backToWork: '← Back to work' },
     workHistory: { nowLabel: 'Now', pageHeading: 'The full timeline' },
     statusBadge: 'Open to Senior PM roles',
   },
   changelog: {
-    nav: { work: 'Releases', about: 'About', resume: 'Resume' },
+    nav: { work: 'Releases', about: 'About', projects: 'Builds', resume: 'Resume' },
     home: { workHeading: 'Changelog', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'Impact', backToWork: '← Back to releases' },
     workHistory: { nowLabel: 'Currently shipping', pageHeading: 'Version history' },
     statusBadge: 'status: open to roles',
   },
   dashboard: {
-    nav: { work: 'Overview', about: 'About', resume: 'Resume' },
+    nav: { work: 'Overview', about: 'About', projects: 'Projects', resume: 'Resume' },
     home: { workHeading: 'Case studies', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'Metrics', backToWork: '← Back to overview' },
     workHistory: { nowLabel: 'Active', pageHeading: 'Activity log' },
     statusBadge: '● Open to Senior PM roles',
   },
   journey: {
-    nav: { work: 'Chapters', about: 'About', resume: 'Resume' },
+    nav: { work: 'Chapters', about: 'About', projects: 'Quests', resume: 'Resume' },
     home: { workHeading: 'Chapters', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'What changed', backToWork: '← Back to the path' },
     workHistory: { nowLabel: 'You are here', pageHeading: 'The path so far' },

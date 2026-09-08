@@ -25,6 +25,9 @@ export function Nav() {
           <NavLink to="/about" className={linkClass}>
             {t.nav.about}
           </NavLink>
+          <NavLink to="/projects" className={linkClass}>
+            {t.nav.projects}
+          </NavLink>
           <NavLink to="/resume" className={linkClass}>
             {t.nav.resume}
           </NavLink>

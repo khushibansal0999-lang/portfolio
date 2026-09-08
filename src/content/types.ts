@@ -42,3 +42,22 @@ export interface EducationEntry {
   detail?: string
   date: string
 }
+
+export type ProjectStatus = 'Live' | 'Archived' | 'Experiment'
+
+export interface Project {
+  slug: string
+  title: string
+  summary: string
+  status: ProjectStatus
+  stack: string[]
+  liveUrl?: string
+  sourceUrl?: string
+  caseStudySlug?: string
+  cover?: string
+  hasDetail: boolean
+  timeframe?: string
+  whyBuilt?: string
+  lesson?: string
+  screens?: { src: string; alt: string; caption?: string }[]
+}
