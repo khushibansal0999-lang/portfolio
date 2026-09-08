@@ -58,6 +58,8 @@ export interface Project {
   hasDetail: boolean
   timeframe?: string
   whyBuilt?: string
+  whyBuiltLabel?: string
   lesson?: string
+  lessonLabel?: string
   screens?: { src: string; alt: string; caption?: string }[]
 }

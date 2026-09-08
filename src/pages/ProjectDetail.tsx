@@ -73,7 +73,7 @@ export function ProjectDetail() {
         {project.whyBuilt && (
           <div className="mt-10">
             <h2 className="text-sm font-semibold uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>
-              Why I built it
+              {project.whyBuiltLabel ?? 'Why I built it'}
             </h2>
             <p className="leading-relaxed max-w-[68ch]">{project.whyBuilt}</p>
           </div>
@@ -82,7 +82,7 @@ export function ProjectDetail() {
         {project.lesson && (
           <div className="mt-8">
             <h2 className="text-sm font-semibold uppercase tracking-widest mb-2" style={{ color: 'var(--text-muted)' }}>
-              What I'd do differently
+              {project.lessonLabel ?? "What I'd do differently"}
             </h2>
             <p className="leading-relaxed max-w-[68ch]">{project.lesson}</p>
           </div>

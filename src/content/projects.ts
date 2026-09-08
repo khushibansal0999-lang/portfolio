@@ -69,6 +69,28 @@ export const projects: Project[] = [
     lesson:
       'Building the refusal behavior took longer than building the retrieval — testing and tuning when the assistant should say "I can\'t answer that" is a much less well-trodden problem than testing when it should answer correctly. I\'d budget for that asymmetry earlier next time rather than treating refusal as a small add-on at the end.',
   },
+  {
+    slug: 'duolingo-teardown',
+    title: 'Duolingo — Product Teardown',
+    summary:
+      'Duolingo doesn\'t sell language learning. It sells not breaking the chain — a 13-slide teardown of the four reinforcing systems (streak, XP, social, re-engagement) that turn a language app into a daily habit, built from a live walkthrough of a real 500-day account.',
+    status: 'Experiment',
+    stack: ['Product teardown', 'Retention analysis'],
+    hasDetail: true,
+    timeframe: 'July 2026',
+    cover: '/projects/duolingo-streak.webp',
+    whyBuiltLabel: 'Scope & lens',
+    whyBuilt:
+      'Source: 13 screens captured from a single live session on a real account — Diamond league, 500-day streak, 50,367 lifetime XP. That profile is a highly engaged power user, so the analysis reads its mechanics accordingly, not as typical new-user behavior. Lens: engagement and retention loops — the mechanics that pull a user back tomorrow, not a feature-by-feature UI critique. Out of scope: pricing/paywall, onboarding, and course content quality, none of which appeared in this session. The framework: every screen maps back to one of four reinforcing systems — Streak (a loss-averse daily habit protected by one number), XP & Gems (a variable-reward currency with combos and multipliers on every action), Social (friend streaks, nudges, and a feed that makes progress visible to others), and Push back in (quests and leagues that expire, built to justify tomorrow\'s session). Two findings from the walkthrough: the 500-day milestone gets a full-screen celebration with the same visual weight most apps reserve for onboarding or a purchase confirmation, and a "Show it off" share button converts an internal engagement stat into external social proof — recruiting the user as a free marketing channel. Separately, the Diamond league (the terminal tier, nothing left to promote to) still drives return visits through a 5-day countdown that resets on a fixed clock, independent of the daily streak — and a rival\'s +540 XP badge is deliberately surfaced just above the user\'s own position, not the unreachable #1, because a beatable target nudges harder than an aspirational one.',
+    lessonLabel: 'The recommendation',
+    lesson:
+      'If I owned this surface, I\'d replace four scattered engagement entry points (Feed, Friend Streaks, Practice Hub, Friends Quests — no shared home, users have to already know where to look) with one merged tab: "Learner\'s Meet-up," split into People (friend streaks, gifting, the feed, and quests unified into one social space — live study rooms, language-matched practice partners, threaded conversation instead of a scrolling achievement feed) and Theory (a companion space for the grammar rules and structured explainers that bite-sized lessons skip, tied to whatever unit the learner is currently on — filling a real gap, since nothing in this session taught grammar theory directly). Success metric: weekly active use of the merged tab against today\'s combined usage of its four predecessors, plus session length per visit as a depth signal.',
+    screens: [
+      { src: '/projects/duolingo-streak.webp', alt: 'Teardown slide analyzing the Duolingo streak screen: a 500-day milestone celebration, 7-day calendar strip, and Show It Off share button' },
+      { src: '/projects/duolingo-leagues.webp', alt: 'Teardown slide analyzing the Duolingo Diamond League leaderboard screen: terminal-tier framing, a 5-day countdown, and a beatable rival badge' },
+      { src: '/projects/duolingo-recommendation.webp', alt: 'Recommendation slide proposing a unified "Learner\'s Meet-up" tab split into People and Theory' },
+    ],
+  },
 ]
 
 export function getProject(slug: string) {
