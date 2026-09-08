@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "-c",
+        "export PATH=/Users/khushibansal/.nvm/versions/node/v24.20.0/bin:$PATH && npm run dev"
+      ],
+      "port": 5173
+    }
+  ]
+}
