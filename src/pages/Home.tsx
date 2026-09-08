@@ -38,7 +38,7 @@ export function Home() {
           <a
             href="mailto:khushi.bansal0999@gmail.com"
             className="text-sm font-medium px-4 py-2 rounded"
-            style={{ background: 'var(--accent)', color: 'var(--text)', borderRadius: 'var(--radius)' }}
+            style={{ background: 'var(--accent-strong)', color: 'var(--bg)', borderRadius: 'var(--radius)' }}
           >
             {t.home.ctaEmail}
           </a>
