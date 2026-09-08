@@ -7,39 +7,17 @@ const statusColor: Record<Project['status'], string> = {
   Experiment: 'var(--text-muted)',
 }
 
-function CardShell({ project, children }: { project: Project; children: React.ReactNode }) {
-  const className =
-    'block border rounded-lg overflow-hidden transition-transform hover:-translate-y-0.5'
-  const style = {
-    borderColor: 'var(--border)',
-    background: 'var(--bg-elevated)',
-    borderRadius: 'var(--radius)',
-    boxShadow: 'var(--shadow)',
-  }
-
-  if (project.hasDetail) {
-    return (
-      <Link to={`/projects/${project.slug}`} className={className} style={style}>
-        {children}
-      </Link>
-    )
-  }
-  const href = project.liveUrl ?? (project.caseStudySlug ? `/work/${project.caseStudySlug}` : '#')
-  const isExternal = href.startsWith('http')
-  return isExternal ? (
-    <a href={href} target="_blank" rel="noreferrer" className={className} style={style}>
-      {children}
-    </a>
-  ) : (
-    <Link to={href} className={className} style={style}>
-      {children}
-    </Link>
-  )
-}
-
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <CardShell project={project}>
+    <div
+      className="border rounded-lg overflow-hidden"
+      style={{
+        borderColor: 'var(--border)',
+        background: 'var(--bg-elevated)',
+        borderRadius: 'var(--radius)',
+        boxShadow: 'var(--shadow)',
+      }}
+    >
       {project.cover && (
         <img src={project.cover} alt="" loading="lazy" className="w-full aspect-video object-cover object-top" />
       )}
@@ -73,24 +51,40 @@ export function ProjectCard({ project }: { project: Project }) {
             </span>
           ))}
         </div>
-        <div className="flex gap-4 mt-4 text-sm">
+        {/* Each destination is its own real link — a card is never a single giant <a>,
+            so "Live" and "Case study"/"Details" always go where their label says. */}
+        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-4 text-sm">
           {project.liveUrl && (
-            <span style={{ color: 'var(--accent-strong)' }} className="font-medium">
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium hover:underline"
+              style={{ color: 'var(--accent-strong)' }}
+            >
               Live ↗
-            </span>
+            </a>
           )}
           {project.caseStudySlug && (
-            <span style={{ color: 'var(--accent-strong)' }} className="font-medium">
+            <Link
+              to={`/work/${project.caseStudySlug}`}
+              className="font-medium hover:underline"
+              style={{ color: 'var(--accent-strong)' }}
+            >
               Case study →
-            </span>
+            </Link>
           )}
-          {project.hasDetail && !project.caseStudySlug && (
-            <span style={{ color: 'var(--accent-strong)' }} className="font-medium">
+          {project.hasDetail && (
+            <Link
+              to={`/projects/${project.slug}`}
+              className="font-medium hover:underline"
+              style={{ color: 'var(--accent-strong)' }}
+            >
               Details →
-            </span>
+            </Link>
           )}
         </div>
       </div>
-    </CardShell>
+    </div>
   )
 }
