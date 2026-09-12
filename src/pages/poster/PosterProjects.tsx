@@ -68,7 +68,7 @@ export function PosterProjects() {
     <PosterLayout>
       <Seo
         title="Projects"
-        description="Solo-built AI products and prototypes — live links, stack, and what I'd do differently."
+        description="Solo-built AI products and prototypes: live links, stack, and what I'd do differently."
       />
       <header style={{ background: poster.forest, color: poster.textOnDark }} className="px-5 sm:px-11 py-12 sm:py-14">
         <div className="max-w-6xl mx-auto">
@@ -78,7 +78,7 @@ export function PosterProjects() {
           </h1>
           <p className="mt-3 max-w-[58ch] text-sm" style={{ color: poster.mutedOnDark }}>
             I built every one of these myself, start to finish. Every link below goes to a live,
-            working product — not a mockup.
+            working product, not a mockup.
           </p>
         </div>
       </header>

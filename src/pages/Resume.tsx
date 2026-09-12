@@ -10,7 +10,7 @@ export function Resume() {
 
   return (
     <Layout>
-      <Seo title="Resume" description="Khushi Bansal — resume." />
+      <Seo title="Resume" description="Khushi Bansal's resume." />
       <article className="max-w-2xl mx-auto px-6 pt-12 pb-24">
         <div className="flex items-start justify-between gap-4 mb-8">
           <div>
@@ -55,7 +55,7 @@ export function Resume() {
                     {role.title} · {role.company}
                   </h3>
                   <span className="text-xs shrink-0" style={{ color: 'var(--text-muted)' }}>
-                    {role.start} – {role.end}
+                    {role.start} to {role.end}
                   </span>
                 </div>
                 <ul className="mt-2 space-y-1.5">
@@ -78,7 +78,7 @@ export function Resume() {
           {education.map((e) => (
             <p key={e.school} className="text-sm">
               <span className="font-medium">{e.degree}</span> · {e.school}
-              {e.detail && <span style={{ color: 'var(--text-muted)' }}> — {e.detail}</span>} ·{' '}
+              {e.detail && <span style={{ color: 'var(--text-muted)' }}> ({e.detail})</span>} ·{' '}
               <span style={{ color: 'var(--text-muted)' }}>{e.date}</span>
             </p>
           ))}

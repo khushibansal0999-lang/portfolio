@@ -10,7 +10,7 @@ const mono = "'IBM Plex Mono', ui-monospace, monospace"
 export function PosterResume() {
   return (
     <PosterLayout>
-      <Seo title="Resume" description="Khushi Bansal — resume." />
+      <Seo title="Resume" description="Khushi Bansal's resume." />
 
       <header style={{ background: poster.forest, color: poster.textOnDark }} className="px-5 sm:px-11 py-12 sm:py-16">
         <div className="max-w-3xl mx-auto flex flex-wrap items-start justify-between gap-6">
@@ -59,7 +59,7 @@ export function PosterResume() {
                       {role.title} · {role.company}
                     </h3>
                     <span className="text-xs shrink-0" style={{ fontFamily: mono, color: poster.rust }}>
-                      {role.start} – {role.end}
+                      {role.start} to {role.end}
                     </span>
                   </div>
                   <ul className="mt-2.5 flex flex-col gap-1.5">
@@ -84,7 +84,7 @@ export function PosterResume() {
               {education.map((e) => (
                 <p key={e.school} className="text-[13px]">
                   <span className="font-semibold">{e.degree}</span> · {e.school}
-                  {e.detail && <span style={{ color: poster.rust }}> — {e.detail}</span>} ·{' '}
+                  {e.detail && <span style={{ color: poster.rust }}> ({e.detail})</span>} ·{' '}
                   <span style={{ color: poster.rust }}>{e.date}</span>
                 </p>
               ))}

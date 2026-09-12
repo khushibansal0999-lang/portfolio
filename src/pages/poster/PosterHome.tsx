@@ -64,7 +64,7 @@ function Hero() {
           className="text-center mt-4 sm:mt-6 text-base sm:text-xl"
           style={{ color: poster.mutedOnDark }}
         >
-          Khushi Bansal — Product Manager, Deep Tech, AI &amp; Data-Driven Products
+          Khushi Bansal · Product Manager, Deep Tech, AI &amp; Data-Driven Products
         </p>
 
         <div className="mt-10 sm:mt-14 grid gap-8 sm:grid-cols-[300px_1fr] items-start">
@@ -90,7 +90,7 @@ function Hero() {
 
           <div className="flex flex-col gap-5 sm:pt-4">
             <p className="leading-relaxed max-w-[58ch] text-sm sm:text-[15px]" style={{ color: poster.mutedOnDark }}>
-              Four years of end-to-end product ownership at Ola Electric — shipping
+              Four years of end-to-end product ownership at Ola Electric, shipping
               battery-management features to millions of EVs with no dedicated PM on the team. Now
               I build AI products solo, start to finish.
             </p>
@@ -152,7 +152,7 @@ function Intro() {
           </h2>
           <p className="mt-5 leading-relaxed max-w-[52ch] text-[13.5px] sm:text-sm" style={{ color: '#3a3a35' }}>
             I joined Ola Electric in 2022 as a firmware engineer on battery management systems, and
-            kept ending up doing the PM's job on top of the engineering anyway — writing the spec,
+            kept ending up doing the PM's job on top of the engineering anyway, writing the spec,
             reading the fleet telemetry, making the tradeoff call on decisions that shipped to
             millions of vehicles. I left in April 2026 to make the switch official. Now I build AI
             products solo, start to finish.
@@ -216,7 +216,7 @@ function TrackRecordAndCaseStudies() {
   const timelineEntries = [
     ...roles.map((r) => ({
       key: r.id,
-      period: r.isCurrent ? `${r.start} — ${r.title}` : `${r.start}–${r.end}`,
+      period: r.isCurrent ? `${r.start} · ${r.title}` : `${r.start}-${r.end}`,
       title: r.company,
       detail: r.scope,
     })),
@@ -241,7 +241,7 @@ function TrackRecordAndCaseStudies() {
                 <Diamond size={11} color={poster.terracotta} style={{ marginTop: 5 }} />
                 <div>
                   <p className="text-[13px] sm:text-sm font-semibold">
-                    {entry.period} — {entry.title}
+                    {entry.period} · {entry.title}
                   </p>
                   <p className="mt-1 text-xs leading-relaxed" style={{ color: poster.mutedOnDark }}>
                     {entry.detail}
@@ -381,11 +381,11 @@ function HowIWorkAndOutside() {
           <div className="mt-5 flex flex-col gap-4">
             <p className="text-[13px] leading-relaxed">
               The mutual-fund RAG assistant abstains and cites its sources instead of ever
-              speculating — I'd rather it cover less and be right every time.
+              speculating. I'd rather it cover less and be right every time.
             </p>
             <p className="text-[13px] leading-relaxed">
-              Fleet telemetry usually told me what to build next before a roadmap meeting could —
-              separating real failure modes from sensor noise, not guessing at them.
+              Fleet telemetry usually told me what to build next before a roadmap meeting could,
+              separating real failure modes from sensor noise instead of guessing at them.
             </p>
             <p className="text-[13px] leading-relaxed">
               Progressive thermal de-rating over a hard cutoff cost some peak performance, on
