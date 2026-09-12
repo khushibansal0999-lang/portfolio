@@ -116,6 +116,9 @@ export function PosterAbout() {
           </Section>
 
           <div className="flex flex-wrap gap-4 pt-2 text-sm" style={{ fontFamily: mono, color: poster.rust }}>
+            <Link to="/work-history" className="hover:underline">
+              The full timeline →
+            </Link>
             <Link to="/projects" className="hover:underline">
               What I've built on my own →
             </Link>
