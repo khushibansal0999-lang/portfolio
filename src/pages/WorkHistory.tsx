@@ -31,7 +31,7 @@ export function WorkHistory() {
                 {role.company}
               </h2>
               <p className="text-sm mt-0.5" style={{ color: 'var(--text-muted)' }}>
-                {role.title} · {role.start} to {role.end} · {role.location}
+                {role.title} · {role.start} – {role.end} · {role.location}
               </p>
               {role.companyBlurb && (
                 <p className="text-sm mt-2 italic" style={{ color: 'var(--text-muted)' }}>
@@ -64,7 +64,7 @@ export function WorkHistory() {
           </h2>
           {education.map((e) => (
             <div key={e.school} className="text-sm leading-relaxed">
-              <span className="font-medium">{e.school}</span>: {e.degree}
+              <span className="font-medium">{e.school}</span> — {e.degree}
               {e.detail && <span style={{ color: 'var(--text-muted)' }}> · {e.detail}</span>} ·{' '}
               <span style={{ color: 'var(--text-muted)' }}>{e.date}</span>
             </div>

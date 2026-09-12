@@ -13,7 +13,7 @@ export function Projects() {
     <Layout>
       <Seo
         title="Projects"
-        description="Solo-built AI products and prototypes: live links, stack, and what I'd do differently."
+        description="Solo-built AI products and prototypes — live links, stack, and what I'd do differently."
       />
       <div className="max-w-3xl mx-auto px-6 pt-12 pb-24">
         <h1 className="text-3xl font-medium mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
@@ -21,7 +21,7 @@ export function Projects() {
         </h1>
         <p className="max-w-[60ch] mb-10" style={{ color: 'var(--text-muted)' }}>
           I built every one of these myself, start to finish. Every link below goes
-          to a live, working product, not a mockup.
+          to a live, working product — not a mockup.
         </p>
         <div className="grid gap-5 sm:grid-cols-2">
           {projects.map((p) => (
