@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
 import { Layout } from '@/components/Layout'
 import { Seo } from '@/components/Seo'
+import { useTheme } from '@/theme/ThemeContext'
+import { PosterAbout } from '@/pages/poster/PosterAbout'
 
 export function About() {
+  const { theme } = useTheme()
+  if (theme === 'poster') return <PosterAbout />
+
   return (
     <Layout>
       <Seo

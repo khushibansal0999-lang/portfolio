@@ -3,9 +3,12 @@ import { CaseStudyCard } from '@/components/CaseStudyCard'
 import { Seo } from '@/components/Seo'
 import { caseStudies } from '@/content/caseStudies'
 import { useTheme } from '@/theme/ThemeContext'
+import { PosterHome } from '@/pages/poster/PosterHome'
 
 export function Home() {
-  const { t } = useTheme()
+  const { theme, t } = useTheme()
+
+  if (theme === 'poster') return <PosterHome />
 
   return (
     <Layout>

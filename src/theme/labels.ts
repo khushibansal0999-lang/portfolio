@@ -1,12 +1,13 @@
-export type ThemeId = 'editorial' | 'changelog' | 'dashboard' | 'journey'
+export type ThemeId = 'editorial' | 'changelog' | 'dashboard' | 'journey' | 'poster'
 
-export const THEME_IDS: ThemeId[] = ['editorial', 'changelog', 'dashboard', 'journey']
+export const THEME_IDS: ThemeId[] = ['editorial', 'changelog', 'dashboard', 'journey', 'poster']
 
 export const THEME_META: Record<ThemeId, { name: string; description: string }> = {
   editorial: { name: 'Editorial', description: 'Documentary profile' },
   changelog: { name: 'Changelog', description: 'Release notes' },
   dashboard: { name: 'Dashboard', description: 'Mission control' },
   journey: { name: 'Journey', description: 'The path' },
+  poster: { name: 'Poster', description: 'Zine cover' },
 }
 
 interface Labels {
@@ -60,5 +61,12 @@ export const labels: Record<ThemeId, Labels> = {
     caseStudy: { metricsHeading: 'What changed', backToWork: '← Back to the path' },
     workHistory: { nowLabel: 'You are here', pageHeading: 'The path so far' },
     statusBadge: 'Open to the next chapter',
+  },
+  poster: {
+    nav: { work: 'Work', about: 'About me', projects: 'Projects', resume: 'Resume' },
+    home: { workHeading: 'Case studies', ctaResume: 'Resume', ctaEmail: 'Get in touch!' },
+    caseStudy: { metricsHeading: 'Target movement', backToWork: '← Back to work' },
+    workHistory: { nowLabel: 'Now', pageHeading: 'Track record' },
+    statusBadge: 'Open to Senior PM',
   },
 }

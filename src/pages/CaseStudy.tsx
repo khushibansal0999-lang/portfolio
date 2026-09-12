@@ -5,13 +5,15 @@ import { Seo } from '@/components/Seo'
 import { ViewDeck } from '@/components/ViewDeck'
 import { getCaseStudy } from '@/content/caseStudies'
 import { useTheme } from '@/theme/ThemeContext'
+import { PosterCaseStudy } from '@/pages/poster/PosterCaseStudy'
 
 export function CaseStudy() {
   const { slug } = useParams<{ slug: string }>()
-  const { t } = useTheme()
+  const { theme, t } = useTheme()
   const caseStudy = slug ? getCaseStudy(slug) : undefined
 
   if (!caseStudy) return <Navigate to="/" replace />
+  if (theme === 'poster') return <PosterCaseStudy caseStudy={caseStudy} />
 
   return (
     <Layout>

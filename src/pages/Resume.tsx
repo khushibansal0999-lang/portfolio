@@ -1,8 +1,13 @@
 import { Layout } from '@/components/Layout'
 import { Seo } from '@/components/Seo'
 import { roles, education, leadership } from '@/content/roles'
+import { useTheme } from '@/theme/ThemeContext'
+import { PosterResume } from '@/pages/poster/PosterResume'
 
 export function Resume() {
+  const { theme } = useTheme()
+  if (theme === 'poster') return <PosterResume />
+
   return (
     <Layout>
       <Seo title="Resume" description="Khushi Bansal — resume." />

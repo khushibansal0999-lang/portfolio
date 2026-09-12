@@ -108,6 +108,32 @@ body {
   color-scheme: light;
 }
 
+/* ---------- poster / Zine cover ---------- */
+/* Distinct palette on purpose — the poster theme is a loud, illustrated cover treatment
+   (ghost-outline display type, diamond motif, forest+marigold) rather than a structural
+   remix of the shared ink-wash look the other four themes use. --accent-strong is a
+   darkened rust so it stays readable as *text* on the cream ground (raw marigold fails
+   AA there); --accent stays true marigold for fills, borders and badges. */
+[data-theme='poster'] {
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-about: var(--font-heading);
+
+  --bg: #f7f2e6;
+  --bg-elevated: #fdfaf1;
+  --text: #201f1c;
+  --text-muted: #7a7462;
+  --accent: #f5b429;
+  --accent-strong: #9a3d1f;
+  --accent-soft: #f6e2b8;
+  --border: #d9cdae;
+  --radius: 0;
+  --shadow: none;
+
+  color-scheme: light;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

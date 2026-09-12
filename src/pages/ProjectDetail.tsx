@@ -3,12 +3,16 @@ import { Layout } from '@/components/Layout'
 import { Seo } from '@/components/Seo'
 import { ViewDeck } from '@/components/ViewDeck'
 import { getProject } from '@/content/projects'
+import { useTheme } from '@/theme/ThemeContext'
+import { PosterProjectDetail } from '@/pages/poster/PosterProjectDetail'
 
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>()
+  const { theme } = useTheme()
   const project = slug ? getProject(slug) : undefined
 
   if (!project || !project.hasDetail) return <Navigate to="/projects" replace />
+  if (theme === 'poster') return <PosterProjectDetail project={project} />
 
   return (
     <Layout>

@@ -2,8 +2,13 @@ import { Layout } from '@/components/Layout'
 import { Seo } from '@/components/Seo'
 import { ProjectCard } from '@/components/ProjectCard'
 import { projects } from '@/content/projects'
+import { useTheme } from '@/theme/ThemeContext'
+import { PosterProjects } from '@/pages/poster/PosterProjects'
 
 export function Projects() {
+  const { theme } = useTheme()
+  if (theme === 'poster') return <PosterProjects />
+
   return (
     <Layout>
       <Seo
