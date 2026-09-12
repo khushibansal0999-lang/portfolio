@@ -157,13 +157,16 @@ function Intro() {
             vehicles. I left in April 2026 to make the switch formal. Now I build AI products solo,
             brief through prototype.
           </p>
-          <div
-            className="inline-flex items-center gap-2.5 mt-6 rounded-full px-5 py-2.5 text-xs sm:text-[13px]"
+          <a
+            href="https://www.linkedin.com/in/khushi-bansal0999/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2.5 mt-6 rounded-full px-5 py-2.5 text-xs sm:text-[13px] hover:opacity-90"
             style={{ background: poster.terracotta, color: '#fff' }}
           >
             <span className="w-4 h-4 rounded-full inline-block" style={{ background: '#fff' }} />
-            linkedin.com/in/khushi-bansal
-          </div>
+            linkedin.com/in/khushi-bansal0999
+          </a>
         </div>
 
         <div className="relative">
