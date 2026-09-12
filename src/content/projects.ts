@@ -66,7 +66,7 @@ export const projects: Project[] = [
     hasDetail: true,
     timeframe: 'August 2026',
     whyBuilt:
-      'The interesting product decision here wasn\'t the retrieval pipeline — it was the boundary. In financial services, a confident wrong answer is worse than no answer: it\'s a regulatory and user-harm risk, not just a bad experience. So I scoped the assistant to facts-only questions pulled from official scheme documents (expense ratio, exit load, minimum SIP, lock-in period, riskometer, benchmark), had every answer cite its source, and built it to abstain rather than speculate the moment a question drifts toward advice. Coverage was traded for trust, on purpose.',
+      'The interesting product decision here wasn\'t the retrieval pipeline — it was the boundary. In financial services, a confident wrong answer is worse than no answer: it\'s a regulatory and user-harm risk, not just a bad experience. So I scoped the assistant to facts-only questions pulled from official scheme documents (expense ratio, exit load, minimum SIP, lock-in period, riskometer, benchmark), had every answer cite its source, and built it to abstain the moment a question drifted toward advice. I\'d rather it knew less and never got it wrong.',
     lesson:
       'Building the refusal behavior took longer than building the retrieval — testing and tuning when the assistant should say "I can\'t answer that" is a much less well-trodden problem than testing when it should answer correctly. I\'d budget for that asymmetry earlier next time rather than treating refusal as a small add-on at the end.',
   },

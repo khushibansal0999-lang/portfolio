@@ -33,9 +33,10 @@ export function Home() {
           Product Manager · Deep Tech, AI &amp; Data-Driven Products
         </p>
         <p className="mt-6 leading-relaxed max-w-[60ch]">
-          Engineer-turned-PM with four years of end-to-end product ownership at Ola
+          Engineer-turned-PM — four years of end-to-end product ownership at Ola
           Electric, shipping battery-management features to millions of EVs with no
-          dedicated PM. Now building AI products solo, brief through prototype.
+          dedicated PM on the team. These days I build AI products solo, from the
+          first brief to a working prototype.
         </p>
         <div className="flex gap-4 mt-8">
           <a

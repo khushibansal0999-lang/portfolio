@@ -20,8 +20,8 @@ export function Projects() {
           Projects
         </h1>
         <p className="max-w-[60ch] mb-10" style={{ color: 'var(--text-muted)' }}>
-          Solo-built, end to end — brief through prototype. Every link below is a live,
-          working product, not a mockup.
+          I built every one of these myself, start to finish. Every link below goes
+          to a live, working product — not a mockup.
         </p>
         <div className="grid gap-5 sm:grid-cols-2">
           {projects.map((p) => (

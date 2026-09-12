@@ -33,16 +33,15 @@ export function About() {
           </h2>
           <p className="leading-relaxed">
             I joined Ola Electric in 2022 as a firmware engineer on battery
-            management systems. What actually happened over the next four years is
-            that I kept ending up doing the PM’s job on top of the engineering —
-            turning a vague "reduce charge time" ask into a shipped optimization
-            framework, deciding how to trade peak performance against rider safety
-            in a thermal model, mining fleet data across a million-plus vehicles to
-            figure out what to build next — because these modules didn’t have a
-            dedicated PM. I left in April 2026 to make the switch formal. In the
-            four months since, I’ve done a PM fellowship and shipped three solo AI
-            products end to end — brief through PRD through working prototype — to
-            prove the shift is real, not a resume rebrand.
+            management systems. These modules didn't have a dedicated PM, so
+            somewhere along the way I just started doing that job too — turning a
+            vague "reduce charge time" ask into a shipped optimization framework, or
+            deciding how much peak performance to trade away for rider safety in a
+            thermal model. Fleet data usually told me what to build next before
+            anyone had to ask. I left in April 2026 to make the switch official.
+            Since then I've done a PM fellowship and shipped three solo AI products
+            — brief, PRD, working prototype, the whole thing — because I wanted
+            proof this was a real shift, not just a new title on a resume.
           </p>
         </section>
 
@@ -53,36 +52,35 @@ export function About() {
           <ul className="space-y-4">
             <li>
               <strong>I ship the boundary, not just the feature.</strong> For a
-              mutual-fund FAQ assistant, the real product decision wasn’t the
+              mutual-fund FAQ assistant, the real product decision wasn't the
               retrieval pipeline — it was making the assistant abstain and cite
-              sources rather than ever speculate, because a confident wrong answer
-              in that domain is a trust and regulatory risk. Coverage traded for
-              trust, deliberately.
+              sources rather than ever speculate, since a confident wrong answer in
+              that domain is a trust and regulatory risk. I'd rather cover less and
+              be right every time.
             </li>
             <li>
-              <strong>I let field data set the roadmap, not instinct.</strong>{' '}
               Mining charging, voltage, temperature, and fault telemetry across the
-              fleet — separating real failure modes from sensor noise — cut fault
-              false positives 80% and 25% across two systems, and directly set what
-              got built next.
+              fleet — separating real failure modes from sensor noise — is what
+              actually told us what to build next, not a roadmap meeting. It cut
+              fault false positives 80% and 25% across two systems.
             </li>
             <li>
-              <strong>I make the call and own the tradeoff.</strong> Chose
-              progressive thermal de-rating over a hard safety cutoff — a small
-              peak-performance loss traded on purpose for reliability and rider
-              experience, not a default I inherited.
+              Progressive thermal de-rating over a hard safety cutoff cost a bit of
+              peak performance, on purpose. I'd rather a rider notice a slightly
+              slower charge than have the product quietly inherit a default that
+              cuts corners on safety.
             </li>
             <li>
-              <strong>I write the artifact, not just the idea.</strong> A 17-page
-              PRD with Given/When/Then acceptance criteria and six explicit
-              non-goals for a solo AI build — the discipline of a real PRD, applied
-              even when I was the only person who had to read it.
+              I wrote a 17-page PRD with Given/When/Then acceptance criteria and six
+              non-goals for a solo AI build that nobody but me would ever read. Not
+              because anyone asked — sloppy specs make sloppy products, even when
+              you're the only stakeholder.
             </li>
             <li>
-              <strong>I’d already done this job before I had the title.</strong>{' '}
-              Four years of spec ownership, cross-functional coordination, and
-              phased rollout on production firmware, without a PM in the room, is
-              the actual credential behind the pivot — not the fellowship.
+              Spec ownership, cross-functional coordination, phased rollout on
+              production firmware, no PM in the room — that was just Tuesday at Ola
+              for four years. The pivot isn't really about the fellowship. It's
+              catching my résumé up to what I was already doing.
             </li>
           </ul>
         </section>
@@ -92,10 +90,10 @@ export function About() {
             What I’m still building
           </h2>
           <p className="leading-relaxed">
-            Everything I’ve shipped, I’ve shipped alone or without a PM in the
-            room — which taught me ownership, but not yet what it’s like to drive a
-            roadmap through a team where I’m not also the one writing the code.
-            That’s the gap the next role needs to close.
+            Everything I've shipped so far, I've shipped alone, or without a PM in
+            the room. That taught me ownership — but not yet what it's like to
+            drive a roadmap through a team where I'm not also the one writing the
+            code. That's the gap I want the next role to close.
           </p>
         </section>
 

@@ -90,9 +90,9 @@ function Hero() {
 
           <div className="flex flex-col gap-5 sm:pt-4">
             <p className="leading-relaxed max-w-[58ch] text-sm sm:text-[15px]" style={{ color: poster.mutedOnDark }}>
-              Engineer-turned-PM with four years of end-to-end product ownership at Ola Electric,
-              shipping battery-management features to millions of EVs with no dedicated PM. Now
-              building AI products solo, brief through prototype.
+              Four years of end-to-end product ownership at Ola Electric — shipping
+              battery-management features to millions of EVs with no dedicated PM on the team. Now
+              I build AI products solo, start to finish.
             </p>
             <div className="flex flex-wrap gap-x-8 gap-y-2 text-xs sm:text-[13px]" style={{ fontFamily: mono }}>
               <span>
@@ -151,11 +151,11 @@ function Intro() {
             I'm Khushi!
           </h2>
           <p className="mt-5 leading-relaxed max-w-[52ch] text-[13.5px] sm:text-sm" style={{ color: '#3a3a35' }}>
-            I joined Ola Electric in 2022 as a firmware engineer on battery management systems and
-            kept ending up doing the PM's job on top of the engineering — writing the spec, reading
-            the fleet telemetry, making the tradeoff call on decisions that shipped to millions of
-            vehicles. I left in April 2026 to make the switch formal. Now I build AI products solo,
-            brief through prototype.
+            I joined Ola Electric in 2022 as a firmware engineer on battery management systems, and
+            kept ending up doing the PM's job on top of the engineering anyway — writing the spec,
+            reading the fleet telemetry, making the tradeoff call on decisions that shipped to
+            millions of vehicles. I left in April 2026 to make the switch official. Now I build AI
+            products solo, start to finish.
           </p>
           <a
             href="https://www.linkedin.com/in/khushi-bansal0999/"
@@ -380,16 +380,17 @@ function HowIWorkAndOutside() {
           <h3 style={{ fontFamily: serif, fontSize: 'clamp(26px,3vw,34px)' }}>How I work</h3>
           <div className="mt-5 flex flex-col gap-4">
             <p className="text-[13px] leading-relaxed">
-              <strong>I ship the boundary, not just the feature.</strong> The mutual-fund RAG
-              assistant abstains and cites rather than speculating — coverage traded for trust.
+              The mutual-fund RAG assistant abstains and cites its sources instead of ever
+              speculating — I'd rather it cover less and be right every time.
             </p>
             <p className="text-[13px] leading-relaxed">
-              <strong>Field data sets the roadmap.</strong> Fleet telemetry separated real failure
-              modes from sensor noise, and decided what got built next.
+              Fleet telemetry usually told me what to build next before a roadmap meeting could —
+              separating real failure modes from sensor noise, not guessing at them.
             </p>
             <p className="text-[13px] leading-relaxed">
-              <strong>I own the tradeoff.</strong> Progressive thermal de-rating over a hard
-              cutoff — peak performance traded on purpose for reliability.
+              Progressive thermal de-rating over a hard cutoff cost some peak performance, on
+              purpose. A rider noticing a slower charge beats one who inherits a corner cut on
+              safety.
             </p>
           </div>
         </div>

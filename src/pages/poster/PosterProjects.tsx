@@ -77,8 +77,8 @@ export function PosterProjects() {
             Projects
           </h1>
           <p className="mt-3 max-w-[58ch] text-sm" style={{ color: poster.mutedOnDark }}>
-            Solo-built, end to end — brief through prototype. Every link below is a live, working
-            product, not a mockup.
+            I built every one of these myself, start to finish. Every link below goes to a live,
+            working product — not a mockup.
           </p>
         </div>
       </header>
