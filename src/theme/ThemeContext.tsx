@@ -2,7 +2,10 @@ import { createContext, useContext, useEffect, useMemo, useState, type ReactNode
 import { THEME_IDS, labels, THEME_META, type ThemeId } from './labels'
 
 const STORAGE_KEY = 'portfolio-theme'
-const DEFAULT_THEME: ThemeId = 'editorial'
+// Default changed from 'editorial' to 'poster' on 2026-09-12 — user preference after
+// reviewing both. See PLAN.md Phase 4 for the history; the "editorial is the only safe
+// cold-visitor default" guardrail no longer applies.
+const DEFAULT_THEME: ThemeId = 'poster'
 
 function isThemeId(value: string | null): value is ThemeId {
   return !!value && (THEME_IDS as string[]).includes(value)
@@ -15,7 +18,7 @@ function resolveInitialTheme(): ThemeId {
   if (isThemeId(fromQuery)) return fromQuery
 
   // A cold visitor with no explicit choice (no query param, no prior pick) always
-  // lands on `editorial` — see PLAN.md Phase 4 guardrails. Only an earlier *explicit*
+  // lands on DEFAULT_THEME (poster, as of 2026-09-12). Only an earlier *explicit*
   // switcher use (stored below) can produce anything else.
   const stored = window.localStorage.getItem(STORAGE_KEY)
   if (isThemeId(stored)) return stored

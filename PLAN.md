@@ -23,7 +23,7 @@ A hiring manager skims. They want, in order: *what did you ship, what changed be
 | Resume: PDF, HTML page, or both | Both. HTML for skimming + SEO, PDF for the ATS upload. |
 | Contact method | One primary CTA. Email link or Cal.com. Not a contact form — nobody fills those. |
 | Public vs. anonymized metrics | Decide the line once, apply it everywhere. "Increased activation 34%" beats "increased activation significantly." Use relative % if absolutes are sensitive. |
-| Default theme on first visit | Locked to `editorial` regardless — see Phase 4. Confirm you're comfortable with that before building, since it's the one every cold recruiter link shows. |
+| Default theme on first visit | **Updated 2026-09-12: now `poster`**, not `editorial` — see the Phase 4 guardrails update. It's the one every cold recruiter link and OG preview shows. |
 
 **Deliverable:** a `content/` outline file naming the three case studies and their one-line "so what."
 
@@ -353,6 +353,8 @@ Not gamified — the counterweight to the other three, and the one shown to anyo
 - **Switching is instant**, no full page reload, no layout shift, no loading spinner. If it feels janky it undercuts the exact competence it's meant to signal.
 - **Test all four independently** for contrast, keyboard nav, and focus states — see the expanded non-negotiables below. A theme that fails accessibility is worse than not having built it.
 - **Motion:** fade/slide-in on scroll at most, in every theme. Respect `prefers-reduced-motion` globally, not per-theme.
+
+> **Update, 2026-09-12:** A 5th theme, `poster` (forest + marigold, zine-cover treatment, real photos), was added later and became the default after the user reviewed it and preferred it over `editorial`. The "editorial is the only safe cold-visitor default" guardrail above no longer holds — `poster` is now what cold visitors, link previews, and OG scrapers see. `DEFAULT_THEME` in `ThemeContext.tsx` reflects this. Known gap: `poster`'s About/Home/Projects copy was run through a dash-elimination/humanize pass that the other four themes' copy was *not*, so content is no longer identical across themes for those pages — worth knowing before editing that copy again. `og-cover.png` is still an unmade placeholder; it should be a Poster-style image once created, not editorial's.
 
 ---
 

@@ -2,14 +2,17 @@
 
 /*
   Theme tokens — see PLAN.md Phase 4.
-  `editorial` on :root is the mandatory default (cold visitors + OG scrapers only ever see this).
-  Each other theme is scoped under [data-theme="…"] on <html> and overrides the same variable set.
-  Components must always read var(--…) — never a hardcoded color — so skinning a new theme
-  never means touching component code, only this file + labels.ts.
+  `poster` is the default theme as of 2026-09-12 (cold visitors + OG scrapers see this one) —
+  see [data-theme='poster'] below and src/pages/poster/palette.ts for its own token set.
+  `editorial` lives on :root as the fallback/base layer; the other three (changelog,
+  dashboard, journey) are scoped under [data-theme="…"] on <html> and override the same
+  variable set. Components must always read var(--…) — never a hardcoded color — so
+  skinning a new theme never means touching component code, only this file + labels.ts.
 
-  Color is intentionally shared across all four themes ("Ink wash" — charcoal, cool gray,
-  soft ivory, slate blue-gray). The four themes differ by structure, type, motif, and
-  labels only (release notes vs. dashboard vs. path vs. editorial) — not by color scheme.
+  Color is intentionally shared across editorial/changelog/dashboard/journey ("Ink wash" —
+  charcoal, cool gray, soft ivory, slate blue-gray); those four differ by structure, type,
+  motif, and labels only, not color scheme. `poster` is the deliberate exception — its own
+  illustrated palette, not a remix of Ink Wash.
 */
 
 :root {
