@@ -20,6 +20,11 @@ export function WorkItemCard({ item }: { item: WorkItem }) {
         <img src={item.cover} alt="" loading="lazy" className="w-full aspect-video object-cover object-top" />
       )}
       <div className="p-5 flex flex-col flex-1">
+        {item.isDraft && (
+          <p className="text-[11px] uppercase tracking-widest mb-2" style={{ color: 'var(--accent-strong)' }}>
+            Draft · only visible on this browser
+          </p>
+        )}
         <div className="flex items-start justify-between gap-3">
           <h3 className="text-lg font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>
             {item.title}

@@ -4,7 +4,8 @@ import { Diamond } from './Diamond'
 import { poster } from './palette'
 import { Seo } from '@/components/Seo'
 import { ViewDeck } from '@/components/ViewDeck'
-import { groupedWork, type WorkItem } from '@/content/workItems'
+import type { WorkItem } from '@/content/workItems'
+import { useWorkGroups } from '@/drafts/useWorkGroups'
 import { useTheme } from '@/theme/ThemeContext'
 
 const serif = "'DM Serif Display', Georgia, serif"
@@ -17,6 +18,11 @@ function PosterWorkCard({ item }: { item: WorkItem }) {
         <img src={item.cover} alt="" loading="lazy" className="w-full aspect-video object-cover object-top" />
       )}
       <div className="p-5 flex flex-col flex-1">
+        {item.isDraft && (
+          <p className="text-[10.5px] uppercase tracking-widest mb-2" style={{ fontFamily: mono, color: poster.rust }}>
+            Draft · only visible on this browser
+          </p>
+        )}
         <div className="flex items-start justify-between gap-3">
           <h3 style={{ fontFamily: serif, fontSize: 20 }}>{item.title}</h3>
           {item.status && (
@@ -68,7 +74,7 @@ function PosterWorkCard({ item }: { item: WorkItem }) {
 
 export function PosterProjects() {
   const { t } = useTheme()
-  const groups = groupedWork()
+  const groups = useWorkGroups()
 
   return (
     <PosterLayout>

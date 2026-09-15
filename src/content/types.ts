@@ -22,8 +22,11 @@ export type WorkCategory =
   | 'case-study'
   | 'build'
   | 'teardown'
+  | 'research'
   | 'market-analysis'
   | 'ux-analysis'
+  | 'metrics'
+  | 'strategy'
 
 export interface WorkCategoryMeta {
   id: WorkCategory

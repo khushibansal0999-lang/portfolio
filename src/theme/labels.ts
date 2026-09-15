@@ -37,35 +37,35 @@ interface Labels {
 
 export const labels: Record<ThemeId, Labels> = {
   editorial: {
-    nav: { work: 'Work', about: 'About', projects: 'Projects', resume: 'Resume' },
+    nav: { work: 'Home', about: 'About', projects: 'Work', resume: 'Resume' },
     home: { workHeading: 'Case studies', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'By the numbers', backToWork: '← Back to work' },
     workHistory: { nowLabel: 'Now', pageHeading: 'The full timeline' },
     statusBadge: `${availability.headline} · ${availability.modesLine}`,
   },
   changelog: {
-    nav: { work: 'Releases', about: 'About', projects: 'Builds', resume: 'Resume' },
+    nav: { work: 'Home', about: 'About', projects: 'Releases', resume: 'Resume' },
     home: { workHeading: 'Changelog', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'Impact', backToWork: '← Back to releases' },
     workHistory: { nowLabel: 'Currently shipping', pageHeading: 'Version history' },
     statusBadge: `status: ${availability.headlineShort.toLowerCase()} · ${availability.modesLine.toLowerCase()}`,
   },
   dashboard: {
-    nav: { work: 'Overview', about: 'About', projects: 'Projects', resume: 'Resume' },
+    nav: { work: 'Overview', about: 'About', projects: 'Work', resume: 'Resume' },
     home: { workHeading: 'Case studies', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'Metrics', backToWork: '← Back to overview' },
     workHistory: { nowLabel: 'Active', pageHeading: 'Activity log' },
     statusBadge: `● ${availability.headline} · ${availability.modesLine}`,
   },
   journey: {
-    nav: { work: 'Chapters', about: 'About', projects: 'Quests', resume: 'Resume' },
+    nav: { work: 'Start here', about: 'About', projects: 'Quests', resume: 'Resume' },
     home: { workHeading: 'Chapters', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'What changed', backToWork: '← Back to the path' },
     workHistory: { nowLabel: 'You are here', pageHeading: 'The path so far' },
     statusBadge: `Open to the next chapter: ${availability.titles.join(' or ')} · ${availability.modesLine}`,
   },
   poster: {
-    nav: { work: 'Work', about: 'About me', projects: 'Projects', resume: 'Resume' },
+    nav: { work: 'Home', about: 'About me', projects: 'Work', resume: 'Resume' },
     home: { workHeading: 'Case studies', ctaResume: 'Resume', ctaEmail: 'Get in touch!' },
     caseStudy: { metricsHeading: 'Target movement', backToWork: '← Back to work' },
     workHistory: { nowLabel: 'Now', pageHeading: 'Track record' },

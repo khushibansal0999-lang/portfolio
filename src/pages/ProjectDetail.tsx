@@ -9,7 +9,7 @@ import { PosterProjectDetail } from '@/pages/poster/PosterProjectDetail'
 
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>()
-  const { theme } = useTheme()
+  const { theme, t } = useTheme()
   const project = slug ? getProject(slug) : undefined
 
   if (!project || !project.hasDetail) return <Navigate to="/projects" replace />
@@ -20,7 +20,7 @@ export function ProjectDetail() {
       <Seo title={project.title} description={project.summary} />
       <article className="max-w-2xl mx-auto px-6 pt-12 pb-24">
         <Link to="/projects" className="text-sm hover:underline" style={{ color: 'var(--text-muted)' }}>
-          ← Back to projects
+          ← Back to {t.nav.projects.toLowerCase()}
         </Link>
 
         <div className="flex items-start justify-between gap-4 mt-6">

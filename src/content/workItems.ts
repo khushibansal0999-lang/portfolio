@@ -26,6 +26,9 @@ export interface WorkItem {
   cover?: string
   links: WorkLink[]
   decks?: Deck[]
+  /** True for an unpublished local draft from the /add form. Rendered with a
+      marker so it can never be mistaken for something a visitor can see. */
+  isDraft?: boolean
 }
 
 function fromCaseStudies(): WorkItem[] {
@@ -73,9 +76,13 @@ export interface WorkGroup {
 
 /** Categories that actually have something in them, in WORK_CATEGORIES order.
     Empty categories are skipped rather than shown as empty shelves. */
-export function groupedWork(): WorkGroup[] {
+export function groupItems(items: WorkItem[]): WorkGroup[] {
   return WORK_CATEGORIES.map((category) => ({
     category,
-    items: workItems.filter((item) => item.category === category.id),
+    items: items.filter((item) => item.category === category.id),
   })).filter((group) => group.items.length > 0)
+}
+
+export function groupedWork(): WorkGroup[] {
+  return groupItems(workItems)
 }

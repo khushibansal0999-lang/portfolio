@@ -1,7 +1,7 @@
 import { Layout } from '@/components/Layout'
 import { Seo } from '@/components/Seo'
 import { WorkItemCard } from '@/components/WorkItemCard'
-import { groupedWork } from '@/content/workItems'
+import { useWorkGroups } from '@/drafts/useWorkGroups'
 import { useTheme } from '@/theme/ThemeContext'
 import { PosterProjects } from '@/pages/poster/PosterProjects'
 
@@ -9,7 +9,7 @@ export function Projects() {
   const { theme, t } = useTheme()
   if (theme === 'poster') return <PosterProjects />
 
-  const groups = groupedWork()
+  const groups = useWorkGroups()
 
   return (
     <Layout>

@@ -4,15 +4,39 @@ Everything on the site is plain TypeScript data in `src/content/`. No CMS, no da
 Add an entry to the right file, save, and it appears in every theme at once. Nothing in
 `src/pages/` needs touching.
 
+## The easy way: the /add form
+
+Go to **`/add`** on the live site (or `http://localhost:5173/add` locally). It is not
+linked from anywhere, so visitors never see it. The form asks for the name, the type of
+content, the one-line summary, tags, an optional deck PDF, an optional link, an optional
+cover image, and two long-text sections for the entry's own page.
+
+Hitting **Save draft** does three things:
+
+1. Shows the new tile on the Work page immediately, in the right section, marked
+   *Draft · only visible on this browser*. That is how you check it looks right.
+2. Renames your PDF / cover to the correct filename and gives you a **Download** button
+   for each. Drop them into `public/decks/` and `public/projects/`.
+3. Gives you a **Copy entry** button with the finished code. Paste it into the `projects`
+   array in `src/content/projects.ts` (or send it to Claude), commit, push. Vercel
+   rebuilds and the entry is live for everyone.
+
+Drafts live only in the browser that created them. Until you do step 3, nobody else can
+see the entry. The drafts list at the bottom of `/add` lets you reopen the publish steps
+or delete a draft.
+
+## The manual way
+
 ```bash
 npm run dev
 ```
 
-Then open http://localhost:5173/projects to see the work library.
+Then open http://localhost:5173/projects to see the work library, and edit the files
+below directly.
 
-## The five categories
+## The categories
 
-The work library on `/projects` is divided into these, in this order. Labels and blurbs
+The work library on `/projects` (nav label: Work) is divided into these, in this order. Labels and blurbs
 live in `src/content/categories.ts`, and only categories that have at least one entry
 show up on the page, so you can add the category first and fill it later.
 
@@ -21,10 +45,13 @@ show up on the page, so you can add the category first and fill it later.
 | `case-study`      | Case studies                  | End-to-end product work: research → decision → artifact → outcome |
 | `build`           | Builds & prototypes           | Things you designed and shipped yourself |
 | `teardown`        | Product teardowns             | An existing product pulled apart |
+| `research`        | User research                 | Primary research: who was asked, what they said, what it changed |
 | `market-analysis` | Market & competitive analysis | Market sizing, competitor landscapes, positioning |
 | `ux-analysis`     | UX analysis                   | A flow or interface read closely, with a proposed fix |
+| `metrics`         | Metrics & experiments         | KPI trees, north-star definitions, experiment designs |
+| `strategy`        | Strategy & vision             | Where a product should go next, and why not the alternatives |
 
-To add a sixth category: add the id to `WorkCategory` in `src/content/types.ts`, then add
+To add another category: add the id to `WorkCategory` in `src/content/types.ts`, then add
 a row to `WORK_CATEGORIES` in `src/content/categories.ts`. TypeScript will tell you if you
 miss one of the two.
 

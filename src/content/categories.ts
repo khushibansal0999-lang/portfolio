@@ -21,6 +21,11 @@ export const WORK_CATEGORIES: WorkCategoryMeta[] = [
     blurb: 'Existing products pulled apart to find the mechanics doing the real work.',
   },
   {
+    id: 'research',
+    label: 'User research',
+    blurb: 'Primary research: who was asked, what they said, and what it changed.',
+  },
+  {
     id: 'market-analysis',
     label: 'Market & competitive analysis',
     blurb: 'Where a market is moving, who is already there, and what that leaves open.',
@@ -29,6 +34,16 @@ export const WORK_CATEGORIES: WorkCategoryMeta[] = [
     id: 'ux-analysis',
     label: 'UX analysis',
     blurb: 'Flows and interfaces read closely, with the friction named and a fix proposed.',
+  },
+  {
+    id: 'metrics',
+    label: 'Metrics & experiments',
+    blurb: 'KPI trees, north-star definitions, and experiment designs with the guardrails written down.',
+  },
+  {
+    id: 'strategy',
+    label: 'Strategy & vision',
+    blurb: 'Where a product should go next, and the argument for why that and not the alternatives.',
   },
 ]
 

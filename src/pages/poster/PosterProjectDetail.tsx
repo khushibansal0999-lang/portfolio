@@ -6,11 +6,14 @@ import { Seo } from '@/components/Seo'
 import { ViewDeck } from '@/components/ViewDeck'
 import type { Project } from '@/content/types'
 import { categoryMeta } from '@/content/categories'
+import { useTheme } from '@/theme/ThemeContext'
 
 const serif = "'DM Serif Display', Georgia, serif"
 const mono = "'IBM Plex Mono', ui-monospace, monospace"
 
 export function PosterProjectDetail({ project }: { project: Project }) {
+  const { t } = useTheme()
+
   return (
     <PosterLayout>
       <Seo title={project.title} description={project.summary} />
@@ -18,7 +21,7 @@ export function PosterProjectDetail({ project }: { project: Project }) {
       <header style={{ background: poster.forest, color: poster.textOnDark }} className="px-5 sm:px-11 py-12 sm:py-16">
         <div className="max-w-4xl mx-auto">
           <Link to="/projects" className="text-xs hover:underline" style={{ fontFamily: mono, color: poster.mutedOnDark }}>
-            ← Back to projects
+            ← Back to {t.nav.projects.toLowerCase()}
           </Link>
 
           <div className="flex flex-wrap items-start justify-between gap-4 mt-5">
