@@ -1,3 +1,5 @@
+import { availability } from '@/content/availability'
+
 export type ThemeId = 'editorial' | 'changelog' | 'dashboard' | 'journey' | 'poster'
 
 export const THEME_IDS: ThemeId[] = ['editorial', 'changelog', 'dashboard', 'journey', 'poster']
@@ -39,34 +41,34 @@ export const labels: Record<ThemeId, Labels> = {
     home: { workHeading: 'Case studies', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'By the numbers', backToWork: '← Back to work' },
     workHistory: { nowLabel: 'Now', pageHeading: 'The full timeline' },
-    statusBadge: 'Open to Senior PM roles',
+    statusBadge: `${availability.headline} · ${availability.modesLine}`,
   },
   changelog: {
     nav: { work: 'Releases', about: 'About', projects: 'Builds', resume: 'Resume' },
     home: { workHeading: 'Changelog', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'Impact', backToWork: '← Back to releases' },
     workHistory: { nowLabel: 'Currently shipping', pageHeading: 'Version history' },
-    statusBadge: 'status: open to roles',
+    statusBadge: `status: ${availability.headlineShort.toLowerCase()} · ${availability.modesLine.toLowerCase()}`,
   },
   dashboard: {
     nav: { work: 'Overview', about: 'About', projects: 'Projects', resume: 'Resume' },
     home: { workHeading: 'Case studies', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'Metrics', backToWork: '← Back to overview' },
     workHistory: { nowLabel: 'Active', pageHeading: 'Activity log' },
-    statusBadge: '● Open to Senior PM roles',
+    statusBadge: `● ${availability.headline} · ${availability.modesLine}`,
   },
   journey: {
     nav: { work: 'Chapters', about: 'About', projects: 'Quests', resume: 'Resume' },
     home: { workHeading: 'Chapters', ctaResume: 'Resume', ctaEmail: 'Email me' },
     caseStudy: { metricsHeading: 'What changed', backToWork: '← Back to the path' },
     workHistory: { nowLabel: 'You are here', pageHeading: 'The path so far' },
-    statusBadge: 'Open to the next chapter',
+    statusBadge: `Open to the next chapter: ${availability.titles.join(' or ')} · ${availability.modesLine}`,
   },
   poster: {
     nav: { work: 'Work', about: 'About me', projects: 'Projects', resume: 'Resume' },
     home: { workHeading: 'Case studies', ctaResume: 'Resume', ctaEmail: 'Get in touch!' },
     caseStudy: { metricsHeading: 'Target movement', backToWork: '← Back to work' },
     workHistory: { nowLabel: 'Now', pageHeading: 'Track record' },
-    statusBadge: 'Open to Senior PM',
+    statusBadge: availability.headlineShort,
   },
 }

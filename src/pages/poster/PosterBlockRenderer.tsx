@@ -51,7 +51,7 @@ function PosterBlockItem({ block }: { block: Block }) {
           “{block.text}”
           {block.attribution && (
             <footer className="text-xs mt-2 not-italic" style={{ fontFamily: mono, color: poster.rust }}>
-              — {block.attribution}
+              · {block.attribution}
             </footer>
           )}
         </blockquote>

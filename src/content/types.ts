@@ -16,6 +16,21 @@ export interface Deck {
   label: string
 }
 
+// How the work library is divided. Labels and blurbs live in src/content/categories.ts;
+// adding a category means adding an id here and a row there. See CONTENT.md.
+export type WorkCategory =
+  | 'case-study'
+  | 'build'
+  | 'teardown'
+  | 'market-analysis'
+  | 'ux-analysis'
+
+export interface WorkCategoryMeta {
+  id: WorkCategory
+  label: string
+  blurb: string
+}
+
 export interface CaseStudy {
   slug: string
   title: string
@@ -24,6 +39,8 @@ export interface CaseStudy {
   timeframe: string
   tags: string[]
   isIndependent: boolean
+  /** Defaults to 'case-study' when omitted. */
+  category?: WorkCategory
   heroMetric?: { label: string; value: string }
   blocks: Block[]
   decks?: Deck[]
@@ -55,6 +72,9 @@ export interface Project {
   slug: string
   title: string
   summary: string
+  /** Which section of the work library this belongs under. Required, so a new
+      entry can never quietly fall out of the grouped view. */
+  category: WorkCategory
   status: ProjectStatus
   stack: string[]
   liveUrl?: string

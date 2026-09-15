@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async'
 export function Seo({ title, description }: { title: string; description?: string }) {
   return (
     <Helmet>
-      <title>{title} — Khushi Bansal</title>
+      <title>{title} · Khushi Bansal</title>
       {description && <meta name="description" content={description} />}
     </Helmet>
   )

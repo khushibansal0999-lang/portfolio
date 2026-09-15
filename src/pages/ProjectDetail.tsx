@@ -3,6 +3,7 @@ import { Layout } from '@/components/Layout'
 import { Seo } from '@/components/Seo'
 import { ViewDeck } from '@/components/ViewDeck'
 import { getProject } from '@/content/projects'
+import { categoryMeta } from '@/content/categories'
 import { useTheme } from '@/theme/ThemeContext'
 import { PosterProjectDetail } from '@/pages/poster/PosterProjectDetail'
 
@@ -35,7 +36,7 @@ export function ProjectDetail() {
         </div>
 
         <p className="text-sm mt-2" style={{ color: 'var(--text-muted)' }}>
-          {project.timeframe} · {project.stack.join(' · ')}
+          {categoryMeta[project.category].label} · {project.timeframe} · {project.stack.join(' · ')}
         </p>
 
         <p className="text-lg mt-6 leading-relaxed max-w-[62ch]">{project.summary}</p>

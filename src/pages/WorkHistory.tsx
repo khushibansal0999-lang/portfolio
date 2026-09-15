@@ -42,7 +42,7 @@ export function WorkHistory() {
               <ul className="mt-4 space-y-2">
                 {role.bullets.map((bullet, i) => (
                   <li key={i} className="text-sm leading-relaxed flex gap-2">
-                    <span style={{ color: 'var(--accent-strong)' }}>—</span>
+                    <span style={{ color: 'var(--accent-strong)' }}>·</span>
                     <span>
                       {bullet.text}{' '}
                       {bullet.caseStudySlug && (
@@ -64,7 +64,7 @@ export function WorkHistory() {
           </h2>
           {education.map((e) => (
             <div key={e.school} className="text-sm leading-relaxed">
-              <span className="font-medium">{e.school}</span> — {e.degree}
+              <span className="font-medium">{e.school}</span> · {e.degree}
               {e.detail && <span style={{ color: 'var(--text-muted)' }}> · {e.detail}</span>} ·{' '}
               <span style={{ color: 'var(--text-muted)' }}>{e.date}</span>
             </div>

@@ -5,6 +5,7 @@ import { poster } from './palette'
 import { Seo } from '@/components/Seo'
 import { ViewDeck } from '@/components/ViewDeck'
 import type { Project } from '@/content/types'
+import { categoryMeta } from '@/content/categories'
 
 const serif = "'DM Serif Display', Georgia, serif"
 const mono = "'IBM Plex Mono', ui-monospace, monospace"
@@ -34,7 +35,7 @@ export function PosterProjectDetail({ project }: { project: Project }) {
           </div>
 
           <p className="text-xs sm:text-sm mt-3" style={{ fontFamily: mono, color: poster.mutedOnDark }}>
-            {project.timeframe} · {project.stack.join(' · ')}
+            {categoryMeta[project.category].label} · {project.timeframe} · {project.stack.join(' · ')}
           </p>
 
           <p className="text-base sm:text-lg mt-6 leading-relaxed max-w-[62ch]" style={{ color: poster.mutedOnDark }}>

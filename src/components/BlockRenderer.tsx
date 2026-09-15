@@ -50,7 +50,7 @@ function BlockItem({ block }: { block: Block }) {
           “{block.text}”
           {block.attribution && (
             <footer className="text-sm not-italic mt-1" style={{ color: 'var(--text-muted)' }}>
-              — {block.attribution}
+              · {block.attribution}
             </footer>
           )}
         </blockquote>
@@ -84,7 +84,7 @@ function BlockItem({ block }: { block: Block }) {
         <ul className="space-y-2 max-w-[68ch]">
           {block.items.map((item, i) => (
             <li key={i} className="flex gap-2 leading-relaxed">
-              <span style={{ color: 'var(--accent-strong)' }}>—</span>
+              <span style={{ color: 'var(--accent-strong)' }}>·</span>
               <span>{item}</span>
             </li>
           ))}

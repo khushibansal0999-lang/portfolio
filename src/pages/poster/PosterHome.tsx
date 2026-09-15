@@ -7,6 +7,7 @@ import { Seo } from '@/components/Seo'
 import { caseStudies } from '@/content/caseStudies'
 import { projects } from '@/content/projects'
 import { roles, education } from '@/content/roles'
+import { availability } from '@/content/availability'
 import heroPortrait from '@/assets/poster/hero-portrait.webp'
 import heroMobile from '@/assets/poster/hero-mobile.webp'
 import khushiIntro from '@/assets/poster/khushi-intro.webp'
@@ -57,7 +58,7 @@ function Hero() {
           className="text-center text-[11px] sm:text-xs tracking-[0.3em] uppercase mb-4"
           style={{ fontFamily: mono, color: poster.marigold }}
         >
-          {roles[0]?.location === 'Remote' ? 'Open to Senior PM · Remote or Bengaluru' : 'Open to Senior PM'}
+          {availability.full}
         </p>
         <GhostWord text="PORTFOLIO" size="clamp(52px, 12vw, 128px)" />
         <p
@@ -193,7 +194,7 @@ function Intro() {
             className="absolute rounded-full px-4 py-2 text-[11px] font-semibold"
             style={{ bottom: 128, right: 0, background: poster.marigold, color: poster.ink }}
           >
-            Open to Senior PM
+            {availability.headlineShort}
           </span>
           <div
             className="absolute px-[18px] py-4"
@@ -203,7 +204,9 @@ function Intro() {
             <p className="mt-2 text-[11px] sm:text-xs leading-relaxed">
               khushi.bansal0999@gmail.com
               <br />
-              Open to Senior PM roles · remote or Bengaluru
+              {availability.headline}
+              <br />
+              {availability.modesLine} · {availability.base}
             </p>
           </div>
         </div>

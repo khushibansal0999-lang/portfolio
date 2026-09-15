@@ -23,7 +23,7 @@ A hiring manager skims. They want, in order: *what did you ship, what changed be
 | Resume: PDF, HTML page, or both | Both. HTML for skimming + SEO, PDF for the ATS upload. |
 | Contact method | One primary CTA. Email link or Cal.com. Not a contact form — nobody fills those. |
 | Public vs. anonymized metrics | Decide the line once, apply it everywhere. "Increased activation 34%" beats "increased activation significantly." Use relative % if absolutes are sensitive. |
-| Default theme on first visit | **Updated 2026-09-12: now `poster`**, not `editorial` — see the Phase 4 guardrails update. It's the one every cold recruiter link and OG preview shows. |
+| Default theme on first visit | **Updated 2026-09-12: now `poster`**, not `editorial`. See the Phase 4 guardrails update. It's the one every cold recruiter link and OG preview shows. |
 
 **Deliverable:** a `content/` outline file naming the three case studies and their one-line "so what."
 
@@ -355,6 +355,12 @@ Not gamified — the counterweight to the other three, and the one shown to anyo
 - **Motion:** fade/slide-in on scroll at most, in every theme. Respect `prefers-reduced-motion` globally, not per-theme.
 
 > **Update, 2026-09-12:** A 5th theme, `poster` (forest + marigold, zine-cover treatment, real photos), was added later and became the default after the user reviewed it and preferred it over `editorial`. The "editorial is the only safe cold-visitor default" guardrail above no longer holds — `poster` is now what cold visitors, link previews, and OG scrapers see. `DEFAULT_THEME` in `ThemeContext.tsx` reflects this. Known gap: `poster`'s About/Home/Projects copy was run through a dash-elimination/humanize pass that the other four themes' copy was *not*, so content is no longer identical across themes for those pages — worth knowing before editing that copy again. `og-cover.png` is still an unmade placeholder; it should be a Poster-style image once created, not editorial's.
+
+> **Update, 2026-09-15:** Three changes, all driven by the user.
+>
+> 1. **No em dashes anywhere in site copy.** The dash-elimination pass that had been Poster-only was applied to every remaining page and content file, so the content divergence flagged in the note above is closed: About/Home/Projects copy reads the same across all five themes again. En dashes in number ranges (`15–25`, `2022–23`) stay. House rule is recorded in `CONTENT.md`.
+> 2. **Availability copy moved to data.** `src/content/availability.ts` is now the single source for "open to APM and PM roles, onsite / hybrid / remote." Every status badge (all five themes, via `labels.ts`) and every Poster hero and contact block reads from it. Target titles changed from "Senior PM" to APM + PM at the user's request.
+> 3. **`/projects` is now a categorised work library.** Five categories (`case-study`, `build`, `teardown`, `market-analysis`, `ux-analysis`) defined in `src/content/categories.ts`; `src/content/workItems.ts` flattens both `caseStudies` and `projects` into one list and groups it. Case studies now appear on `/projects` as well as `/`. Empty categories are hidden, so market-analysis and ux-analysis sections stay invisible until there is something to put in them. `CONTENT.md` at the repo root is the author-facing guide for adding entries later, which was the point of the change. `ProjectCard.tsx` was deleted, replaced by `WorkItemCard.tsx` (and `PosterWorkCard` inside `PosterProjects.tsx`).
 
 ---
 
