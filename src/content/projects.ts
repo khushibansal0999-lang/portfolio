@@ -116,6 +116,43 @@ export const projects: Project[] = [
       'Building the refusal behavior took longer than building the retrieval. Testing and tuning when the assistant should say "I can\'t answer that" is a much less well-trodden problem than testing when it should answer correctly. I\'d budget for that asymmetry earlier next time rather than treating refusal as a small add-on at the end.',
   },
   {
+    slug: 'smallcase-teardown',
+    title: 'smallcase Product Teardown',
+    summary:
+      'smallcase is building a trust product on top of a transaction product\'s instincts. A 21-slide teardown from one six-minute session: the net-worth ledger shipped a confident headline number on holdings 16 months stale, the marketplace ranks its own in-house baskets on a leaderboard it computes itself, and 12 defects surfaced in the time it took to scroll the app.',
+    category: 'teardown',
+    status: 'Experiment',
+    stack: ['Retention analysis', 'Trust & data integrity', 'Competitive read'],
+    hasDetail: true,
+    timeframe: 'July 2026',
+    cover: '/projects/smallcase-stale-data.webp',
+    decks: [{ href: '/decks/smallcase-teardown-deck.pdf', label: 'View full deck' }],
+    whyBuiltLabel: 'Scope & lens',
+    whyBuilt:
+      'Evidence base: one uninterrupted Android session, 21:14 to 21:20 on a single July 2026 evening, 20 screens reviewed. The teardown states up front what it did not see, so it cannot be read as claiming more than it has: no order placement or broker execution, no Investments tab, no Credit tab, no search, no paywall or real pricing, no first-run onboarding, and no view of what the returns figures look like unlocked. Capture order is not a user journey, so no intent is inferred from the sequence, with one exception: the Weekly Wrap is an authored linear story whose own progress indicator fixes card position 1 to 8, so claims about that ordering hold where claims about ordering elsewhere do not. Lens: smallcase sells curated baskets executed through your existing broker, which is a transaction business with weak switching costs. But the screens with the most investment behind them (Wealth Office, Ask AI, Forecast 2029, Credit, US equities) are aimed at a different job: own the household ledger. A basket is a purchase, a net worth is a relationship, and the teardown reads every finding against the gap between those two.',
+    lessonLabel: 'The critical finding, and what I would do',
+    lesson:
+      'The Wealth Office displays a net worth of ₹4.23L with a ▲₹2.34K monthly delta and a dashed three-year forecast cone out to 2029, on holdings last synced in March 2025. Sixteen months stale, rendered as current, with a dismissible toast as the only tell. The defect is not the stale data, it is the confidence rendered on top of it, and Ask AI reads the same inputs. A net-worth product\'s entire value is that the number is true, so this is the worst possible bug in the worst possible place. Two other trust cracks sit beside it: 3 of the 5 top stock baskets by inflow are Windmill Capital, smallcase\'s own in-house research arm, ranked on a leaderboard the platform computes itself with no disclosure of the relationship, which is the Amazon Basics problem. And the card whose only job is ranking prints its ranks as 1, 2, 3, 2, 5. My P0 is trust integrity: never render a net worth, delta or forecast from inputs past a staleness threshold, make re-auth the primary action rather than a dismissible banner, and put a QA gate on the Weekly Wrap pipeline before publish, measured by the share of views served a stale-flagged number and resync completion within 7 days. P1 is conversion honesty: show something on returns before the unlock so users stop ranking baskets by minimum ticket size, label first-party baskets before someone else does it for you, and break the sequence that ends a fear-framed story on a buy-adjacent CTA. P2 is structural: promote Wealth Office into primary nav, move the activation checklist above three screens of merchandising, give Create a fork-an-existing-basket first step, and attack the 72× cliff between a ₹300 beginner basket and a ₹21,701 themed one that sit in the same browsing surface.',
+    screens: [
+      {
+        src: '/projects/smallcase-thesis.webp',
+        alt: 'Thesis slide: two products and two instincts, contrasting the polished transaction layer against the trust layer shipping a headline net worth built on sixteen-month-old data',
+      },
+      {
+        src: '/projects/smallcase-stale-data.webp',
+        alt: 'Critical finding slide: a timeline from holdings last synced in March 2025, to a net worth displayed as current in July 2026, to a three-year forecast cone rendered out to 2029',
+      },
+      {
+        src: '/projects/smallcase-defect-log.webp',
+        alt: 'Defect log slide listing twelve issues found in six minutes, graded from critical to low, with screen and severity for each',
+      },
+      {
+        src: '/projects/smallcase-recommendations.webp',
+        alt: 'Recommendations slide with P0 trust integrity and P1 conversion honesty, each action paired with the metric that would show whether it worked',
+      },
+    ],
+  },
+  {
     slug: 'duolingo-teardown',
     title: 'Duolingo Product Teardown',
     summary:
