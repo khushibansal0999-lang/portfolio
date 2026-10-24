@@ -171,35 +171,44 @@ function Intro() {
           </a>
         </div>
 
-        <div className="relative">
-          <div
-            aria-hidden="true"
-            className="absolute"
-            style={{ top: 20, left: 20, right: 54, bottom: 20, background: poster.forest }}
-          />
-          <div className="relative ml-12 overflow-hidden" style={{ height: 300, background: '#d8d2c2' }}>
-            <img
-              src={khushiIntro}
-              alt="Khushi Bansal"
-              className="w-full h-full object-cover"
-              style={{ objectPosition: '66% 28%' }}
+        {/* The photo is portrait and she sits right of centre in it, so the frame keeps a
+            near-portrait ratio (barely any crop) and both pills sit over the left third,
+            where the tree is. The contact card used to overlap the bottom of the image and
+            covered her; it sits below the frame now. */}
+        <div className="flex flex-col gap-4">
+          <div className="relative">
+            <div
+              aria-hidden="true"
+              className="absolute"
+              style={{ top: -14, left: -14, width: '58%', height: '72%', background: poster.forest }}
             />
+            <div
+              className="relative overflow-hidden"
+              style={{ aspectRatio: '4 / 5', background: '#d8d2c2' }}
+            >
+              <img
+                src={khushiIntro}
+                alt="Khushi Bansal"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: '50% 42%' }}
+              />
+            </div>
+            <span
+              className="absolute rounded-full px-4 py-2 text-[11px] font-semibold"
+              style={{ top: 14, left: -12, background: poster.marigold, color: poster.ink }}
+            >
+              Bengaluru, India
+            </span>
+            <span
+              className="absolute rounded-full px-4 py-2 text-[11px] font-semibold"
+              style={{ bottom: 14, left: -12, background: poster.marigold, color: poster.ink }}
+            >
+              {availability.headlineShort}
+            </span>
           </div>
-          <span
-            className="absolute rounded-full px-4 py-2 text-[11px] font-semibold"
-            style={{ top: 48, left: 0, background: poster.marigold, color: poster.ink }}
-          >
-            Bengaluru, India
-          </span>
-          <span
-            className="absolute rounded-full px-4 py-2 text-[11px] font-semibold"
-            style={{ bottom: 128, right: 0, background: poster.marigold, color: poster.ink }}
-          >
-            {availability.headlineShort}
-          </span>
           <div
-            className="absolute px-[18px] py-4"
-            style={{ bottom: -16, left: 48, right: 54, background: poster.ink, color: poster.textOnDark }}
+            className="px-[18px] py-4"
+            style={{ background: poster.ink, color: poster.textOnDark }}
           >
             <p style={{ fontFamily: serif, fontSize: 20 }}>Contact</p>
             <p className="mt-2 text-[11px] sm:text-xs leading-relaxed">

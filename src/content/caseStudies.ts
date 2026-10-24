@@ -92,7 +92,11 @@ export const caseStudies: CaseStudy[] = [
       {
         kind: 'link',
         href: 'https://app-photos-retrieval-qvlu7ymwqfadwg3siqnqjb.streamlit.app/',
-        text: 'Open the discovery engine and filter the 84 cases yourself →',
+        text: 'Open the discovery engine and question the evidence yourself →',
+      },
+      {
+        kind: 'paragraph',
+        text: 'The discovery engine is live rather than a screenshot, and it takes questions in plain English: ask what people type when they cannot describe the photo, and it picks the slice of the 1,196 tagged records that answers you and replies with the real quotes and the record IDs behind them. Nothing in this case study has to be taken on trust. Both apps run on free tiers, which is the point, so give either one about 15 seconds to wake up if nobody has opened it recently.',
       },
       { kind: 'heading', text: 'How it would be judged' },
       {
