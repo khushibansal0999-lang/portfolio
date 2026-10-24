@@ -22,7 +22,7 @@ export const pageCopy = {
     photoCaption:
       'I make product decisions with evidence, write the artifact, and own the tradeoff.',
     intro:
-      'Four years of end-to-end product ownership at Ola Electric, shipping battery-management features to millions of EVs. ₹3 Cr of hardware recovered, false alerts cut 80%, one patent co-filed. Top Fellow at Next Leap, and now I build AI products solo, start to finish.',
+      'Four years of end-to-end product ownership at Ola Electric, shipping battery management features to millions of EVs. Recovered ₹3 Cr of hardware, cut false alerts by 80%, and co-filed a patent. Top Fellow at Next Leap, and now I build AI products solo, start to finish.',
     greetingLine1: 'Hello,',
     greetingLine2: "I'm Khushi!",
     arc: 'I joined Ola Electric in 2022 as a firmware engineer on battery management systems, and the product decisions came with the modules: writing the spec, reading the fleet telemetry, making the tradeoff call on things that shipped to millions of vehicles. I left in April 2026 to make the switch official, was named Top Fellow of my Next Leap cohort, and now I build AI products solo, start to finish.',
@@ -93,7 +93,7 @@ export const pageCopy = {
     ] as Bullet[],
     stillBuildingHeading: "What I'm still building",
     stillBuilding:
-      'So far I\'ve mostly shipped alone, or as the one person holding both the spec and the code. That taught me ownership, but not yet what it\'s like to drive a roadmap through a team where I\'m not also the one building it. That\'s the gap I want the next role to close.',
+      'So far I\'ve mostly shipped alone, holding both the spec and the code. That built deep technical ownership, and now I am ready to scale that rigor across a cross-functional product team where I drive the roadmap directly.',
     outsideHeading: 'Outside work',
     outside:
       'I paint and write outside of anything that needs a deadline, play badminton badly but often, and I\'m rarely without a book going. I also volunteer regularly, the same instinct that had me running webinars and mock-interview drives back in college, just less official about it now.',
@@ -110,7 +110,7 @@ export const pageCopy = {
 
   resume: {
     summary:
-      'Engineer moving into product management. 3.9 years at Ola Electric owning battery-management features end to end across millions of EVs: ₹3 Cr of scrapped hardware recovered, false failure alerts cut 80%, one patent co-filed. Top Fellow at Next Leap. I scope ambiguous problems into specs, mine fleet telemetry to decide what to build, and drive delivery across teams to launch. Now building AI products solo, from problem definition through to a shipped app.',
+      'Technical product manager with 3.9 years of end-to-end ownership at Ola Electric across millions of EVs: recovered ₹3 Cr of hardware, cut false failure alerts by 80%, and co-filed a patent. Top Fellow at Next Leap. I scope ambiguous problems into specs, mine telemetry to decide what to build, and drive cross-functional delivery to launch. Now building AI products solo, from problem definition through to a shipped app.',
     downloadLabel: 'Download PDF',
     experienceHeading: 'Experience',
     educationHeading: 'Education',
