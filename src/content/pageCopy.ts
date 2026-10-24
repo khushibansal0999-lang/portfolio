@@ -91,7 +91,9 @@ export const pageCopy = {
         text: 'Spec ownership, cross-functional coordination, phased rollout on production firmware across six teams: that was just Tuesday at Ola for four years. The pivot isn\'t really about the fellowship. It\'s catching my résumé up to what I was already doing.',
       },
     ] as Bullet[],
-    stillBuildingHeading: "What I'm still building",
+    // Key stays `stillBuilding` so the [id] in COPY.md/COPY.docx keeps pointing at the
+    // same block; only the visible heading changed, to match the forward-looking copy.
+    stillBuildingHeading: "Where I'm headed",
     stillBuilding:
       'So far I\'ve mostly shipped alone, holding both the spec and the code. That built deep technical ownership, and now I am ready to scale that rigor across a cross-functional product team where I drive the roadmap directly.',
     outsideHeading: 'Outside work',

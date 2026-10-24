@@ -161,7 +161,7 @@ I paint and write outside of anything that needs a deadline, play badminton badl
 
 - `[about.arcHeading]` The arc
 - `[about.howIWorkHeading]` How I work
-- `[about.stillBuildingHeading]` What I'm still building
+- `[about.stillBuildingHeading]` Where I'm headed
 - `[about.outsideHeading]` Outside work
 - `[about.timelineLink]` The full timeline →
 - `[about.projectsLink]` What I've built on my own →
