@@ -4,6 +4,22 @@ Everything on the site is plain TypeScript data in `src/content/`. No CMS, no da
 Add an entry to the right file, save, and it appears in every theme at once. Nothing in
 `src/pages/` needs touching.
 
+## Changing wording: COPY.md
+
+`COPY.md` at the repo root is every word of written content on the site in one editable
+file. Regenerate it any time with:
+
+```bash
+npm run export:copy
+```
+
+Edit the prose in it freely, leave the `[id]` lines alone (they map each block back to the
+code), then hand the file to Claude and say which sections you changed. Regenerating
+overwrites `COPY.md`, so apply edits to the code before re-running the command.
+
+All page prose now lives in `src/content/pageCopy.ts` and is shared by all five themes, so
+one wording change lands everywhere. Only `src/theme/labels.ts` differs per theme.
+
 ## The easy way: the /add form
 
 Go to **`/add`** on the live site (or `http://localhost:5173/add` locally). It is not

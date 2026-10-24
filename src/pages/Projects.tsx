@@ -2,28 +2,30 @@ import { Layout } from '@/components/Layout'
 import { Seo } from '@/components/Seo'
 import { WorkItemCard } from '@/components/WorkItemCard'
 import { useWorkGroups } from '@/drafts/useWorkGroups'
+import { pageCopy } from '@/content/pageCopy'
 import { useTheme } from '@/theme/ThemeContext'
 import { PosterProjects } from '@/pages/poster/PosterProjects'
 
 export function Projects() {
   const { theme, t } = useTheme()
-  if (theme === 'poster') return <PosterProjects />
-
+  // Both hooks run before the Poster branch: switching theme must not change how many
+  // hooks this component calls, or React throws on the next render.
   const groups = useWorkGroups()
+
+  if (theme === 'poster') return <PosterProjects />
 
   return (
     <Layout>
       <Seo
         title={t.nav.projects}
-        description="Case studies, builds, teardowns, and analysis: the full library of what I've shipped and taken apart."
+        description={pageCopy.work.seoDescription}
       />
       <div className="max-w-3xl mx-auto px-6 pt-12 pb-24">
         <h1 className="text-3xl font-medium mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
           {t.nav.projects}
         </h1>
         <p className="max-w-[60ch]" style={{ color: 'var(--text-muted)' }}>
-          Everything here is mine end to end. Case studies and builds, plus the teardowns
-          and analysis I write to keep the muscle warm.
+{pageCopy.work.intro}
         </p>
 
         {/* Jump links, so someone scanning for one kind of artifact lands on it directly. */}

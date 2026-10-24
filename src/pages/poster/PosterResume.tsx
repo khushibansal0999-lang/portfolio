@@ -4,6 +4,7 @@ import { poster } from './palette'
 import { Seo } from '@/components/Seo'
 import { roles, education, leadership } from '@/content/roles'
 import { contact } from '@/content/contact'
+import { pageCopy } from '@/content/pageCopy'
 
 const serif = "'DM Serif Display', Georgia, serif"
 const mono = "'IBM Plex Mono', ui-monospace, monospace"
@@ -21,7 +22,7 @@ export function PosterResume() {
               Khushi Bansal
             </h1>
             <p className="mt-3 text-sm" style={{ color: poster.mutedOnDark }}>
-              Product Manager · Deep Tech, AI &amp; Data-Driven Products
+              {pageCopy.home.tagline.replace('Khushi Bansal · ', '')}
             </p>
             <p
               className="text-xs mt-1 flex flex-wrap gap-x-2 gap-y-1"
@@ -55,7 +56,7 @@ export function PosterResume() {
             className="shrink-0 rounded-full px-5 py-2.5 text-xs sm:text-sm font-semibold"
             style={{ background: poster.marigold, color: poster.ink }}
           >
-            Download PDF
+            {pageCopy.resume.downloadLabel}
           </a>
         </div>
       </header>
@@ -63,18 +64,13 @@ export function PosterResume() {
       <article style={{ background: poster.cream, color: poster.ink }} className="px-5 sm:px-11 py-12 sm:py-16">
         <div className="max-w-3xl mx-auto flex flex-col gap-10">
           <p className="leading-relaxed text-[14.5px] max-w-[64ch]" style={{ color: '#2c2b27' }}>
-            Engineer moving into product management. 3.9 years at Ola Electric owning
-            battery-management features end to end across millions of EVs: ₹3 Cr of scrapped
-            hardware recovered, false failure alerts cut 80%, one patent co-filed. Top Fellow at
-            Next Leap. I scope ambiguous problems into specs, mine fleet telemetry to decide what to
-            build, and drive delivery across teams to launch. Now building AI products solo, from
-            problem definition through to a shipped app.
+{pageCopy.resume.summary}
           </p>
 
           <section>
             <h2 className="flex items-center gap-3" style={{ fontFamily: serif, fontSize: 24 }}>
               <Diamond size={11} color={poster.terracotta} />
-              Experience
+              {pageCopy.resume.experienceHeading}
             </h2>
             <div className="mt-5 flex flex-col gap-7">
               {roles.map((role) => (
@@ -103,7 +99,7 @@ export function PosterResume() {
           <section>
             <h2 className="flex items-center gap-3" style={{ fontFamily: serif, fontSize: 24 }}>
               <Diamond size={11} color={poster.terracotta} />
-              Education
+              {pageCopy.resume.educationHeading}
             </h2>
             <div className="mt-4 flex flex-col gap-1">
               {education.map((e) => (
@@ -119,7 +115,7 @@ export function PosterResume() {
           <section>
             <h2 className="flex items-center gap-3" style={{ fontFamily: serif, fontSize: 24 }}>
               <Diamond size={11} color={poster.terracotta} />
-              Leadership
+              {pageCopy.resume.leadershipHeading}
             </h2>
             <ul className="mt-4 flex flex-col gap-1.5 text-[13px]" style={{ color: '#4a463d' }}>
               {leadership.map((item) => (

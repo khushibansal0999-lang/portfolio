@@ -2,6 +2,7 @@ import { Layout } from '@/components/Layout'
 import { Seo } from '@/components/Seo'
 import { roles, education, leadership } from '@/content/roles'
 import { contact } from '@/content/contact'
+import { pageCopy } from '@/content/pageCopy'
 import { useTheme } from '@/theme/ThemeContext'
 import { PosterResume } from '@/pages/poster/PosterResume'
 
@@ -47,25 +48,19 @@ export function Resume() {
             className="shrink-0 text-sm font-medium px-4 py-2 rounded border"
             style={{ borderColor: 'var(--border)', borderRadius: 'var(--radius)' }}
           >
-            Download PDF
+            {pageCopy.resume.downloadLabel}
           </a>
         </div>
 
         <section className="mb-10">
           <p className="leading-relaxed">
-            Engineer moving into product management. 3.9 years at Ola Electric
-            owning battery-management features end to end across millions of EVs:
-            ₹3 Cr of scrapped hardware recovered, false failure alerts cut 80%, one
-            patent co-filed. Top Fellow at Next Leap. I scope ambiguous problems into
-            specs, mine fleet telemetry to decide what to build, and drive delivery
-            across teams to launch. Now building AI products solo, from problem
-            definition through to a shipped app.
+{pageCopy.resume.summary}
           </p>
         </section>
 
         <section className="mb-10">
           <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--text-muted)' }}>
-            Experience
+            {pageCopy.resume.experienceHeading}
           </h2>
           <div className="space-y-8">
             {roles.map((role) => (
@@ -93,7 +88,7 @@ export function Resume() {
 
         <section className="mb-10">
           <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--text-muted)' }}>
-            Education
+            {pageCopy.resume.educationHeading}
           </h2>
           {education.map((e) => (
             <p key={e.school} className="text-sm">
@@ -106,7 +101,7 @@ export function Resume() {
 
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--text-muted)' }}>
-            Leadership
+            {pageCopy.resume.leadershipHeading}
           </h2>
           <ul className="text-sm space-y-1" style={{ color: 'var(--text-muted)' }}>
             {leadership.map((item) => (

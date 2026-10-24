@@ -2,6 +2,7 @@ import { Layout } from '@/components/Layout'
 import { CaseStudyCard } from '@/components/CaseStudyCard'
 import { Seo } from '@/components/Seo'
 import { caseStudies } from '@/content/caseStudies'
+import { pageCopy } from '@/content/pageCopy'
 import { useTheme } from '@/theme/ThemeContext'
 import { PosterHome } from '@/pages/poster/PosterHome'
 
@@ -30,13 +31,10 @@ export function Home() {
           Khushi Bansal
         </h1>
         <p className="text-xl mt-3" style={{ color: 'var(--text-muted)' }}>
-          Product Manager · Deep Tech, AI &amp; Data-Driven Products
+          {pageCopy.home.tagline.replace('Khushi Bansal · ', '')}
         </p>
         <p className="mt-6 leading-relaxed max-w-[60ch]">
-          Engineer-turned-PM. I owned battery-management features end to end at Ola
-          Electric, shipping to millions of EVs: ₹3 Cr of hardware recovered, false
-          failure alerts cut 80%, one patent co-filed. Top Fellow at Next Leap. These
-          days I build AI products solo, from the first brief to a working prototype.
+{pageCopy.home.intro}
         </p>
         <div className="flex gap-4 mt-8">
           <a

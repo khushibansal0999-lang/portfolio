@@ -8,6 +8,7 @@ import { caseStudies } from '@/content/caseStudies'
 import { projects } from '@/content/projects'
 import { roles, education } from '@/content/roles'
 import { availability } from '@/content/availability'
+import { pageCopy } from '@/content/pageCopy'
 import heroPortrait from '@/assets/poster/hero-portrait.webp'
 import heroMobile from '@/assets/poster/hero-mobile.webp'
 import khushiIntro from '@/assets/poster/khushi-intro.webp'
@@ -65,7 +66,7 @@ function Hero() {
           className="text-center mt-4 sm:mt-6 text-base sm:text-xl"
           style={{ color: poster.mutedOnDark }}
         >
-          Khushi Bansal · Product Manager, Deep Tech, AI &amp; Data-Driven Products
+          {pageCopy.home.tagline}
         </p>
 
         <div className="mt-10 sm:mt-14 grid gap-8 sm:grid-cols-[300px_1fr] items-start">
@@ -84,17 +85,14 @@ function Hero() {
             </div>
             <div style={{ background: poster.ink }} className="px-4 py-3.5">
               <p className="text-[11px] leading-relaxed" style={{ fontFamily: mono, color: poster.textOnDark }}>
-                I make product decisions with evidence, write the artifact, and own the tradeoff.
+                {pageCopy.home.photoCaption}
               </p>
             </div>
           </div>
 
           <div className="flex flex-col gap-5 sm:pt-4">
             <p className="leading-relaxed max-w-[58ch] text-sm sm:text-[15px]" style={{ color: poster.mutedOnDark }}>
-              Four years of end-to-end product ownership at Ola Electric, shipping
-              battery-management features to millions of EVs. ₹3 Cr of hardware recovered, false
-              alerts cut 80%, one patent co-filed. Top Fellow at Next Leap, and now I build AI
-              products solo, start to finish.
+{pageCopy.home.intro}
             </p>
             <div className="flex flex-wrap gap-x-8 gap-y-2 text-xs sm:text-[13px]" style={{ fontFamily: mono }}>
               <span>
@@ -148,16 +146,12 @@ function Intro() {
       <div className="max-w-6xl mx-auto grid gap-12 sm:grid-cols-[1fr_360px] items-center">
         <div>
           <h2 style={{ fontFamily: serif, fontSize: 'clamp(34px,5vw,58px)', lineHeight: 1.03 }}>
-            Hello,
+            {pageCopy.home.greetingLine1}
             <br />
-            I'm Khushi!
+            {pageCopy.home.greetingLine2}
           </h2>
           <p className="mt-5 leading-relaxed max-w-[52ch] text-[13.5px] sm:text-sm" style={{ color: '#3a3a35' }}>
-            I joined Ola Electric in 2022 as a firmware engineer on battery management systems, and
-            the product decisions came with the modules: writing the spec, reading the fleet
-            telemetry, making the tradeoff call on things that shipped to millions of vehicles. I
-            left in April 2026 to make the switch official, was named Top Fellow of my Next Leap
-            cohort, and now I build AI products solo, start to finish.
+{pageCopy.home.arc}
           </p>
           <a
             href="https://www.linkedin.com/in/khushi-bansal0999/"
@@ -210,7 +204,7 @@ function Intro() {
             className="px-[18px] py-4"
             style={{ background: poster.ink, color: poster.textOnDark }}
           >
-            <p style={{ fontFamily: serif, fontSize: 20 }}>Contact</p>
+            <p style={{ fontFamily: serif, fontSize: 20 }}>{pageCopy.home.contactHeading}</p>
             <p className="mt-2 text-[11px] sm:text-xs leading-relaxed">
               khushi.bansal0999@gmail.com
               <br />
@@ -246,7 +240,7 @@ function TrackRecordAndCaseStudies() {
       <div className="max-w-6xl mx-auto grid gap-12 lg:grid-cols-2">
         <div>
           <h3 style={{ fontFamily: serif, fontSize: 'clamp(28px,3.4vw,38px)', color: poster.marigold }}>
-            Track record
+            {pageCopy.home.trackRecordHeading}
           </h3>
           <div className="mt-6 flex flex-col gap-5">
             {timelineEntries.map((entry) => (
@@ -265,7 +259,7 @@ function TrackRecordAndCaseStudies() {
           </div>
 
           <div className="mt-8 p-6" style={{ background: poster.marigold, color: poster.ink }}>
-            <h4 style={{ fontFamily: serif, fontSize: 30 }}>Case studies</h4>
+            <h4 style={{ fontFamily: serif, fontSize: 30 }}>{pageCopy.home.caseStudiesHeading}</h4>
             <div className="mt-4 flex flex-col gap-4">
               {caseStudies.map((cs) => (
                 <Link key={cs.slug} to={`/work/${cs.slug}`} className="flex gap-3 group">
@@ -281,7 +275,7 @@ function TrackRecordAndCaseStudies() {
               ))}
             </div>
             <div className="flex flex-wrap gap-2 mt-4">
-              {['Problem framing', 'PRDs', '0→1', 'Data fluency'].map((tag) => (
+              {pageCopy.home.caseStudyTags.map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full px-3 py-1.5 text-[11px]"
@@ -296,31 +290,29 @@ function TrackRecordAndCaseStudies() {
 
         <div>
           <h3 style={{ fontFamily: serif, fontSize: 'clamp(28px,3.4vw,38px)', color: poster.marigold }}>
-            Toolkit
+            {pageCopy.home.toolkitHeading}
           </h3>
           <div className="grid grid-cols-2 gap-6 mt-5">
             <div>
-              <p style={{ fontFamily: serif, fontSize: 19 }}>Product</p>
+              <p style={{ fontFamily: serif, fontSize: 19 }}>{pageCopy.home.toolkit.productHeading}</p>
               <p className="mt-2 text-xs leading-loose" style={{ color: poster.mutedOnDark }}>
-                PRDs &amp; acceptance criteria
-                <br />
-                Primary user research
-                <br />
-                KPI trees &amp; A/B design
-                <br />
-                RICE · Kano · MoSCoW
+                {pageCopy.home.toolkit.product.map((line, i) => (
+                  <span key={line}>
+                    {i > 0 && <br />}
+                    {line}
+                  </span>
+                ))}
               </p>
             </div>
             <div>
-              <p style={{ fontFamily: serif, fontSize: 19 }}>Technical</p>
+              <p style={{ fontFamily: serif, fontSize: 19 }}>{pageCopy.home.toolkit.technicalHeading}</p>
               <p className="mt-2 text-xs leading-loose" style={{ color: poster.mutedOnDark }}>
-                Fleet telemetry analysis
-                <br />
-                Optimisation (LP, MPC)
-                <br />
-                Embedded systems
-                <br />
-                SQL · Python · RAG · LLM APIs
+                {pageCopy.home.toolkit.technical.map((line, i) => (
+                  <span key={line}>
+                    {i > 0 && <br />}
+                    {line}
+                  </span>
+                ))}
               </p>
             </div>
           </div>
@@ -329,7 +321,7 @@ function TrackRecordAndCaseStudies() {
             <p
               style={{ fontFamily: serif, fontSize: 'clamp(38px,5vw,56px)', lineHeight: 0.95, color: 'transparent', WebkitTextStroke: `1px ${poster.marigold}`, opacity: 0.6 }}
             >
-              SHIPPED
+              {pageCopy.home.shippedHeading}
             </p>
           </div>
           <div className="mt-4 flex flex-col gap-2.5">
@@ -368,12 +360,8 @@ function TrackRecordAndCaseStudies() {
 }
 
 function HowIWorkAndOutside() {
-  const outside = [
-    { label: 'Painting & writing', shape: 'diamond' as const },
-    { label: 'Badminton, often', shape: 'circle' as const },
-    { label: 'Always a book going', shape: 'square' as const },
-    { label: 'Volunteering & mentoring', shape: 'rounded' as const },
-  ]
+  const shapes = ['diamond', 'circle', 'square', 'rounded'] as const
+  const outside = pageCopy.home.outside.map((label, i) => ({ label, shape: shapes[i % shapes.length] }))
   const shapeStyle = (shape: (typeof outside)[number]['shape']): CSSProperties => {
     switch (shape) {
       case 'diamond':
@@ -390,25 +378,21 @@ function HowIWorkAndOutside() {
     <section style={{ background: poster.cream, color: poster.ink }} className="px-5 sm:px-11 py-14 sm:py-16">
       <div className="max-w-6xl mx-auto grid gap-12 lg:grid-cols-2">
         <div>
-          <h3 style={{ fontFamily: serif, fontSize: 'clamp(26px,3vw,34px)' }}>How I work</h3>
+          <h3 style={{ fontFamily: serif, fontSize: 'clamp(26px,3vw,34px)' }}>
+            {pageCopy.home.howIWorkHeading}
+          </h3>
           <div className="mt-5 flex flex-col gap-4">
-            <p className="text-[13px] leading-relaxed">
-              The mutual-fund RAG assistant abstains and cites its sources instead of ever
-              speculating. I'd rather it cover less and be right every time.
-            </p>
-            <p className="text-[13px] leading-relaxed">
-              Fleet telemetry usually told me what to build next before a roadmap meeting could,
-              separating real failure modes from sensor noise instead of guessing at them.
-            </p>
-            <p className="text-[13px] leading-relaxed">
-              Progressive thermal de-rating over a hard cutoff cost some peak performance, on
-              purpose. A rider noticing a slower charge beats one who inherits a corner cut on
-              safety.
-            </p>
+            {pageCopy.home.howIWork.map((para) => (
+              <p key={para} className="text-[13px] leading-relaxed">
+                {para}
+              </p>
+            ))}
           </div>
         </div>
         <div>
-          <h3 style={{ fontFamily: serif, fontSize: 'clamp(26px,3vw,34px)' }}>Outside work</h3>
+          <h3 style={{ fontFamily: serif, fontSize: 'clamp(26px,3vw,34px)' }}>
+            {pageCopy.home.outsideHeading}
+          </h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-5 text-center">
             {outside.map((item) => (
               <div key={item.label}>

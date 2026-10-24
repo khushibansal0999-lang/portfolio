@@ -4,6 +4,7 @@ import { Diamond } from './Diamond'
 import { poster } from './palette'
 import { Seo } from '@/components/Seo'
 import { ViewDeck } from '@/components/ViewDeck'
+import { pageCopy } from '@/content/pageCopy'
 import type { WorkItem } from '@/content/workItems'
 import { useWorkGroups } from '@/drafts/useWorkGroups'
 import { useTheme } from '@/theme/ThemeContext'
@@ -80,7 +81,7 @@ export function PosterProjects() {
     <PosterLayout>
       <Seo
         title={t.nav.projects}
-        description="Case studies, builds, teardowns, and analysis: the full library of what I've shipped and taken apart."
+        description={pageCopy.work.seoDescription}
       />
       <header style={{ background: poster.forest, color: poster.textOnDark }} className="px-5 sm:px-11 py-12 sm:py-14">
         <div className="max-w-6xl mx-auto">
@@ -89,8 +90,7 @@ export function PosterProjects() {
             {t.nav.projects}
           </h1>
           <p className="mt-3 max-w-[58ch] text-sm" style={{ color: poster.mutedOnDark }}>
-            Everything here is mine end to end. Case studies and builds, plus the teardowns and
-            analysis I write to keep the muscle warm.
+{pageCopy.work.intro}
           </p>
 
           {/* Jump links, so someone scanning for one kind of artifact lands on it directly. */}

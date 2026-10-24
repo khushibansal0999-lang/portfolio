@@ -370,6 +370,8 @@ Not gamified — the counterweight to the other three, and the one shown to anyo
 > - **`og:url` corrected** to `https://portfolio-five-beryl-33.vercel.app`; it had been pointing at a domain that does not exist. `og-cover.png` is still missing.
 > - Roles restructured to match the resume: the Next Leap fellowship is now its own current role rather than being merged into "Independent Product Work".
 
+> **Update, 2026-10-24 (copy layer):** All page prose moved out of the page components into `src/content/pageCopy.ts`, and both the shared-theme and Poster renderings now read the same strings. This closes the About/Home copy divergence that the 2026-09-12 note flagged: there is no longer a Poster version and a non-Poster version of any paragraph, only one. `npm run export:copy` (`scripts/export-copy.mjs`, loads the content modules through Vite's SSR loader) regenerates `COPY.md`, a single reviewable document of every word on the site with a stable `[id]` on each block mapping back to its field. The intended loop is: Khushi edits `COPY.md`, hands it back, Claude applies the diffs to the content files.
+
 ---
 
 ## Phase 5 — Launch

@@ -3,6 +3,7 @@ import { Layout } from '@/components/Layout'
 import { Seo } from '@/components/Seo'
 import { useTheme } from '@/theme/ThemeContext'
 import { PosterAbout } from '@/pages/poster/PosterAbout'
+import { pageCopy } from '@/content/pageCopy'
 
 export function About() {
   const { theme } = useTheme()
@@ -16,112 +17,50 @@ export function About() {
       />
       <article className="max-w-2xl mx-auto px-6 pt-12 pb-24 space-y-10" style={{ fontFamily: 'var(--font-about)' }}>
         <header>
-          <h1 className="text-3xl font-medium">
-            About
-          </h1>
-          <p className="text-lg mt-4 leading-relaxed">
-            I spent four years owning product decisions on features I was also
-            engineering: writing the spec, reading the fleet telemetry, making the
-            tradeoff call on things that shipped to millions of vehicles. In 2026 I
-            made that role official.
-          </p>
+          <h1 className="text-3xl font-medium">About</h1>
+          <p className="text-lg mt-4 leading-relaxed">{pageCopy.about.intro}</p>
         </header>
 
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: 'var(--text-muted)' }}>
-            The arc
+            {pageCopy.about.arcHeading}
           </h2>
-          <p className="leading-relaxed">
-            I joined Ola Electric in 2022 as a firmware engineer on battery
-            management systems. I owned those modules end to end, so the product
-            decisions came with them: turning a vague "reduce charge time" ask into a
-            shipped optimization framework, or deciding how much peak performance to
-            trade away for rider safety in a thermal model. Fleet data usually told
-            me what to build next before anyone had to ask. I left in April 2026 to
-            make the switch official. Since then I've been named Top Fellow of my
-            Next Leap cohort and shipped solo AI products, brief, PRD, working
-            prototype, the whole thing, because I wanted proof this was a real shift
-            and not just a new title on a resume.
-          </p>
+          <p className="leading-relaxed">{pageCopy.about.arc}</p>
         </section>
 
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: 'var(--text-muted)' }}>
-            How I work
+            {pageCopy.about.howIWorkHeading}
           </h2>
           <ul className="space-y-4">
-            <li>
-              <strong>I ship the boundary, not just the feature.</strong> For a
-              mutual-fund FAQ assistant, the real product decision wasn't the
-              retrieval pipeline. It was making the assistant abstain and cite
-              sources rather than ever speculate, since a confident wrong answer in
-              that domain is a trust and regulatory risk. I'd rather cover less and
-              be right every time.
-            </li>
-            <li>
-              I publish the number that makes me look worse. A hand audit of my own
-              AI classifications on the Google Photos research found only 12 of 20
-              agreed, which moved the headline finding from 82% to 76%. It went in
-              the deck, because a research number nobody has stress-tested isn't a
-              finding yet.
-            </li>
-            <li>
-              Mining charging, voltage, temperature, and fault telemetry across the
-              fleet, separating real failure modes from sensor noise, is what
-              actually told us what to build next, not a roadmap meeting. It cut
-              fault false positives 80% and 25% across two systems.
-            </li>
-            <li>
-              Progressive thermal de-rating over a hard safety cutoff cost a bit of
-              peak performance, on purpose. I'd rather a rider notice a slightly
-              slower charge than have the product quietly inherit a default that
-              cuts corners on safety.
-            </li>
-            <li>
-              I wrote a 17-page PRD with Given/When/Then acceptance criteria and six
-              non-goals for a solo AI build that nobody but me would ever read. Not
-              because anyone asked. Sloppy specs make sloppy products, even when
-              you're the only stakeholder.
-            </li>
-            <li>
-              Spec ownership, cross-functional coordination, phased rollout on
-              production firmware across six teams: that was just Tuesday at Ola for
-              four years. The pivot isn't really about the fellowship. It's
-              catching my résumé up to what I was already doing.
-            </li>
+            {pageCopy.about.howIWork.map((bullet) => (
+              <li key={bullet.text} className="leading-relaxed">
+                {bullet.lead && <strong>{bullet.lead}</strong>} {bullet.text}
+              </li>
+            ))}
           </ul>
         </section>
 
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: 'var(--text-muted)' }}>
-            What I’m still building
+            {pageCopy.about.stillBuildingHeading}
           </h2>
-          <p className="leading-relaxed">
-            So far I've mostly shipped alone, or as the one person holding both the
-            spec and the code. That taught me ownership, but not yet what it's like
-            to drive a roadmap through a team where I'm not also the one building
-            it. That's the gap I want the next role to close.
-          </p>
+          <p className="leading-relaxed">{pageCopy.about.stillBuilding}</p>
         </section>
 
         <section>
           <h2 className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: 'var(--text-muted)' }}>
-            Outside work
+            {pageCopy.about.outsideHeading}
           </h2>
-          <p className="leading-relaxed">
-            I paint and write outside of anything that needs a deadline, play
-            badminton badly but often, and I’m rarely without a book going. I also
-            volunteer regularly, the same instinct that had me running webinars and
-            mock-interview drives back in college, just less official about it now.
-          </p>
+          <p className="leading-relaxed">{pageCopy.about.outside}</p>
         </section>
 
         <section className="flex gap-6 text-sm pt-2" style={{ color: 'var(--accent-strong)' }}>
           <Link to="/work-history" className="hover:underline">
-            The full timeline →
+            {pageCopy.about.timelineLink}
           </Link>
           <Link to="/projects" className="hover:underline">
-            What I've built on my own →
+            {pageCopy.about.projectsLink}
           </Link>
         </section>
 

@@ -4,6 +4,7 @@ import { useTheme } from '@/theme/ThemeContext'
 import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 import { Diamond } from './Diamond'
 import { poster } from './palette'
+import { pageCopy } from '@/content/pageCopy'
 
 const navVarOverrides = {
   '--border': poster.borderOnDark,
@@ -69,7 +70,7 @@ function PosterFooter() {
         <div className="flex items-center gap-3.5">
           <Diamond size={16} color={poster.terracotta} />
           <p style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 'clamp(22px,3.4vw,34px)' }}>
-            Let's talk product.
+            {pageCopy.footer.posterHeadline}
           </p>
         </div>
         <a
