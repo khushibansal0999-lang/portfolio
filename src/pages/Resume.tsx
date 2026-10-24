@@ -1,6 +1,7 @@
 import { Layout } from '@/components/Layout'
 import { Seo } from '@/components/Seo'
 import { roles, education, leadership } from '@/content/roles'
+import { contact } from '@/content/contact'
 import { useTheme } from '@/theme/ThemeContext'
 import { PosterResume } from '@/pages/poster/PosterResume'
 
@@ -18,8 +19,27 @@ export function Resume() {
               Khushi Bansal
             </h1>
             <p style={{ color: 'var(--text-muted)' }}>Product Manager · Deep Tech, AI &amp; Data-Driven Products</p>
-            <p className="text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
-              khushi.bansal0999@gmail.com
+            <p className="text-sm mt-1 flex flex-wrap gap-x-2 gap-y-1" style={{ color: 'var(--text-muted)' }}>
+              <a href={`mailto:${contact.email}`} className="hover:underline">
+                {contact.email}
+              </a>
+              <span aria-hidden="true">·</span>
+              <a href={contact.phoneHref} className="hover:underline">
+                {contact.phone}
+              </a>
+              <span aria-hidden="true">·</span>
+              <span>{contact.location}</span>
+            </p>
+            <p className="text-sm mt-1 flex flex-wrap gap-x-2" style={{ color: 'var(--accent-strong)' }}>
+              <a href={contact.linkedin} target="_blank" rel="noreferrer" className="hover:underline">
+                LinkedIn ↗
+              </a>
+              <span aria-hidden="true" style={{ color: 'var(--text-muted)' }}>
+                ·
+              </span>
+              <a href={contact.github} target="_blank" rel="noreferrer" className="hover:underline">
+                GitHub ↗
+              </a>
             </p>
           </div>
           <a

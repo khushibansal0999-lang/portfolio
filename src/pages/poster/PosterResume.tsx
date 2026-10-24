@@ -3,6 +3,7 @@ import { Diamond } from './Diamond'
 import { poster } from './palette'
 import { Seo } from '@/components/Seo'
 import { roles, education, leadership } from '@/content/roles'
+import { contact } from '@/content/contact'
 
 const serif = "'DM Serif Display', Georgia, serif"
 const mono = "'IBM Plex Mono', ui-monospace, monospace"
@@ -22,8 +23,31 @@ export function PosterResume() {
             <p className="mt-3 text-sm" style={{ color: poster.mutedOnDark }}>
               Product Manager · Deep Tech, AI &amp; Data-Driven Products
             </p>
-            <p className="text-xs mt-1" style={{ fontFamily: mono, color: poster.marigold }}>
-              khushi.bansal0999@gmail.com
+            <p
+              className="text-xs mt-1 flex flex-wrap gap-x-2 gap-y-1"
+              style={{ fontFamily: mono, color: poster.marigold }}
+            >
+              <a href={`mailto:${contact.email}`} className="hover:underline">
+                {contact.email}
+              </a>
+              <span aria-hidden="true">·</span>
+              <a href={contact.phoneHref} className="hover:underline">
+                {contact.phone}
+              </a>
+            </p>
+            <p
+              className="text-xs mt-1 flex flex-wrap gap-x-2 gap-y-1"
+              style={{ fontFamily: mono, color: poster.mutedOnDark }}
+            >
+              <span>{contact.location}</span>
+              <span aria-hidden="true">·</span>
+              <a href={contact.linkedin} target="_blank" rel="noreferrer" className="hover:underline">
+                LinkedIn ↗
+              </a>
+              <span aria-hidden="true">·</span>
+              <a href={contact.github} target="_blank" rel="noreferrer" className="hover:underline">
+                GitHub ↗
+              </a>
             </p>
           </div>
           <a
