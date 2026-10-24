@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "export:copy": "node scripts/export-copy.mjs"
+    "export:copy": "node scripts/export-copy.mjs && python3 scripts/export_copy_docx.py"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.3.3",

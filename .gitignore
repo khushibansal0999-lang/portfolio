@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Intermediate for the copy export; COPY.md and COPY.docx are the outputs
+COPY.json

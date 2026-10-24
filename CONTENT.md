@@ -6,16 +6,20 @@ Add an entry to the right file, save, and it appears in every theme at once. Not
 
 ## Changing wording: COPY.md
 
-`COPY.md` at the repo root is every word of written content on the site in one editable
-file. Regenerate it any time with:
+Every word of written content on the site is exported to two files at the repo root:
+
+- **`COPY.docx`** for editing in Word, which is usually what you want.
+- **`COPY.md`** the same content as plain text, which reads and diffs well in the repo.
+
+Regenerate both any time with:
 
 ```bash
 npm run export:copy
 ```
 
-Edit the prose in it freely, leave the `[id]` lines alone (they map each block back to the
+Edit the prose freely, leave the `[id]` markers alone (they map each block back to the
 code), then hand the file to Claude and say which sections you changed. Regenerating
-overwrites `COPY.md`, so apply edits to the code before re-running the command.
+overwrites both files, so apply edits to the code before re-running the command.
 
 All page prose now lives in `src/content/pageCopy.ts` and is shared by all five themes, so
 one wording change lands everywhere. Only `src/theme/labels.ts` differs per theme.
