@@ -22,7 +22,6 @@ export function Resume() {
               khushi.bansal0999@gmail.com
             </p>
           </div>
-          {/* TODO: replace with a real exported PDF once available — see PLAN.md Phase 0 */}
           <a
             href="/resume.pdf"
             className="shrink-0 text-sm font-medium px-4 py-2 rounded border"
@@ -34,12 +33,13 @@ export function Resume() {
 
         <section className="mb-10">
           <p className="leading-relaxed">
-            Engineer-turned-PM with 3.9 years of end-to-end product ownership at
-            Ola Electric, shipping battery-management features to millions of EVs
-            with no dedicated PM. Scope ambiguous problems into specs, mine fleet
-            telemetry to decide what to build, and drive cross-functional delivery
-            to launch. Pairing deep-tech credibility (BMS, charging, optimization)
-            with hands-on AI product building.
+            Engineer moving into product management. 3.9 years at Ola Electric
+            owning battery-management features end to end across millions of EVs:
+            ₹3 Cr of scrapped hardware recovered, false failure alerts cut 80%, one
+            patent co-filed. Top Fellow at Next Leap. I scope ambiguous problems into
+            specs, mine fleet telemetry to decide what to build, and drive delivery
+            across teams to launch. Now building AI products solo, from problem
+            definition through to a shipped app.
           </p>
         </section>
 

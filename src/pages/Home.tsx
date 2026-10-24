@@ -33,10 +33,10 @@ export function Home() {
           Product Manager · Deep Tech, AI &amp; Data-Driven Products
         </p>
         <p className="mt-6 leading-relaxed max-w-[60ch]">
-          Engineer-turned-PM with four years of end-to-end product ownership at Ola
-          Electric, shipping battery-management features to millions of EVs with no
-          dedicated PM on the team. These days I build AI products solo, from the
-          first brief to a working prototype.
+          Engineer-turned-PM. I owned battery-management features end to end at Ola
+          Electric, shipping to millions of EVs: ₹3 Cr of hardware recovered, false
+          failure alerts cut 80%, one patent co-filed. Top Fellow at Next Leap. These
+          days I build AI products solo, from the first brief to a working prototype.
         </p>
         <div className="flex gap-4 mt-8">
           <a

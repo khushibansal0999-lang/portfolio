@@ -5,6 +5,45 @@ import type { Project } from './types'
 // src/content/categories.ts for the taxonomy and CONTENT.md for how to add a new entry.
 export const projects: Project[] = [
   {
+    slug: 'tip-of-my-tongue-app',
+    title: 'Tip of My Tongue',
+    summary:
+      'Photo search that shows you every clue it took from your sentence, lets you fix the ones it read wrong, and asks once when a clue could mean two things. The shipped MVP behind the graduation-project case study.',
+    category: 'build',
+    status: 'Live',
+    stack: ['Python', 'Streamlit', 'Gemini'],
+    liveUrl: 'https://tip-of-my-tongue.streamlit.app',
+    caseStudySlug: 'tip-of-my-tongue',
+    cover: '/projects/tip-of-my-tongue-cover.webp',
+    hasDetail: false,
+    timeframe: 'September 2026',
+  },
+  {
+    slug: 'photo-retrieval-discovery-engine',
+    title: 'Photo Retrieval Discovery Engine',
+    summary:
+      'A research pipeline that read 6,551 public complaints about losing your own photos and turned them into 84 verified, filterable failure cases. Built on free tiers, and still live to poke at.',
+    category: 'research',
+    status: 'Live',
+    stack: ['Python', 'Gemini', 'Streamlit', 'Reddit & app store data'],
+    liveUrl: 'https://app-photos-retrieval-qvlu7ymwqfadwg3siqnqjb.streamlit.app/',
+    cover: '/projects/tip-of-my-tongue-engine.webp',
+    hasDetail: true,
+    timeframe: 'September 2026',
+    whyBuiltLabel: 'How it works',
+    whyBuilt:
+      'Reading reviews by hand gives you quotes and no counts. I wanted both. The pipeline collects posts from Reddit, the Play Store and the App Store across five countries, drops storage and billing complaints with a keyword filter before any model runs, then has Gemini pull the same 15 facts out of every remaining post: what the photo was, what the person remembered, what they had forgotten, where the search broke, and what they did instead. A second pass separates real memory failures from bug reports. 6,551 posts collected, 1,196 kept, 84 real cases. Every case is tagged to the point in the journey where it broke, so the failures can be sliced by photo type, by what was remembered, and by what the person did next, and every number traces back to a quote. Open-source scrapers, Python, Gemini and Streamlit Cloud, all free tiers, no spend.',
+    lessonLabel: 'The honest limits',
+    lesson:
+      'I hand-audited 20 of the classifications and published the correction rather than the flattering number: 12 of 20 agreed. The misses were nearly all posts that never describe the photo, and dropping those leaves 51 cases and moves the headline 82% to 76%. The finding holds, the precision does not. The deeper limit is who writes a public post at all: this hears the people annoyed enough to complain, and 57% of them never say what the photo actually was. That gap is exactly why the project also ran a survey of 31 and five interviews rather than stopping here.',
+    screens: [
+      {
+        src: '/projects/tip-of-my-tongue-engine.webp',
+        alt: 'Discovery engine slide showing the five-stage pipeline from 6,551 collected posts down to 84 real cases, with the four headline findings',
+      },
+    ],
+  },
+  {
     slug: 'voice-recovery-prototype',
     title: 'Voice Recovery Coach Prototype',
     summary:

@@ -362,6 +362,14 @@ Not gamified — the counterweight to the other three, and the one shown to anyo
 > 2. **Availability copy moved to data.** `src/content/availability.ts` is now the single source for "open to APM and PM roles, onsite / hybrid / remote." Every status badge (all five themes, via `labels.ts`) and every Poster hero and contact block reads from it. Target titles changed from "Senior PM" to APM + PM at the user's request.
 > 3. **`/projects` is now a categorised work library.** Five categories (`case-study`, `build`, `teardown`, `market-analysis`, `ux-analysis`) defined in `src/content/categories.ts`; `src/content/workItems.ts` flattens both `caseStudies` and `projects` into one list and groups it. Case studies now appear on `/projects` as well as `/`. Empty categories are hidden, so market-analysis and ux-analysis sections stay invisible until there is something to put in them. `CONTENT.md` at the repo root is the author-facing guide for adding entries later, which was the point of the change. `ProjectCard.tsx` was deleted, replaced by `WorkItemCard.tsx` (and `PosterWorkCard` inside `PosterProjects.tsx`).
 
+> **Update, 2026-10-24:** New source material arrived (the Next Leap graduation deck and a rewritten resume), and the site was updated to match.
+>
+> - **Tip of My Tongue** is now the lead case study: the Google Photos retrieval project, 6,551 scraped posts down to 84 verified cases, a controlled root-cause test, a RICE-scored three-way option set, and a shipped Streamlit MVP. Deck at `public/decks/tip-of-my-tongue-deck.pdf`, three slides rendered to WebP for inline use. Two matching entries on `/projects`: the live app (`build`) and the discovery engine (`research`, which fills that category for the first time).
+> - **"No PM on the team" phrasing is gone sitewide**, at the user's request. Every instance now frames the same fact as ownership ("I owned those modules end to end, so the product decisions came with them") rather than as an absence. Applies to About, Home, Resume and `roles.ts`, in both the Poster and shared versions.
+> - **Resume refreshed** from `Khushi_Bansal_Resume.pdf`, which is now the real file at `public/resume.pdf` (the Download PDF button was pointing at a 404 before). New facts carried in: ₹3 Cr of hardware recovered, Top Fellow at Next Leap, McKinsey Forward Program, and the patent's real dates (filed Aug 2024, published Feb 2026). The site previously said "filed July 2025", which was wrong.
+> - **`og:url` corrected** to `https://portfolio-five-beryl-33.vercel.app`; it had been pointing at a domain that does not exist. `og-cover.png` is still missing.
+> - Roles restructured to match the resume: the Next Leap fellowship is now its own current role rather than being merged into "Independent Product Work".
+
 ---
 
 ## Phase 5 — Launch

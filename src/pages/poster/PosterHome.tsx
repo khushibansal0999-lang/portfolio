@@ -92,8 +92,9 @@ function Hero() {
           <div className="flex flex-col gap-5 sm:pt-4">
             <p className="leading-relaxed max-w-[58ch] text-sm sm:text-[15px]" style={{ color: poster.mutedOnDark }}>
               Four years of end-to-end product ownership at Ola Electric, shipping
-              battery-management features to millions of EVs with no dedicated PM on the team. Now
-              I build AI products solo, start to finish.
+              battery-management features to millions of EVs. ₹3 Cr of hardware recovered, false
+              alerts cut 80%, one patent co-filed. Top Fellow at Next Leap, and now I build AI
+              products solo, start to finish.
             </p>
             <div className="flex flex-wrap gap-x-8 gap-y-2 text-xs sm:text-[13px]" style={{ fontFamily: mono }}>
               <span>
@@ -153,10 +154,10 @@ function Intro() {
           </h2>
           <p className="mt-5 leading-relaxed max-w-[52ch] text-[13.5px] sm:text-sm" style={{ color: '#3a3a35' }}>
             I joined Ola Electric in 2022 as a firmware engineer on battery management systems, and
-            kept ending up doing the PM's job on top of the engineering anyway, writing the spec,
-            reading the fleet telemetry, making the tradeoff call on decisions that shipped to
-            millions of vehicles. I left in April 2026 to make the switch official. Now I build AI
-            products solo, start to finish.
+            the product decisions came with the modules: writing the spec, reading the fleet
+            telemetry, making the tradeoff call on things that shipped to millions of vehicles. I
+            left in April 2026 to make the switch official, was named Top Fellow of my Next Leap
+            cohort, and now I build AI products solo, start to finish.
           </p>
           <a
             href="https://www.linkedin.com/in/khushi-bansal0999/"
@@ -298,7 +299,7 @@ function TrackRecordAndCaseStudies() {
                 <br />
                 KPI trees &amp; A/B design
                 <br />
-                MoSCoW prioritisation
+                RICE · Kano · MoSCoW
               </p>
             </div>
             <div>
@@ -310,7 +311,7 @@ function TrackRecordAndCaseStudies() {
                 <br />
                 Embedded systems
                 <br />
-                SQL · Python · RAG
+                SQL · Python · RAG · LLM APIs
               </p>
             </div>
           </div>

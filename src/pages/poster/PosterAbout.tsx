@@ -32,9 +32,9 @@ export function PosterAbout() {
             About me
           </h1>
           <p className="mt-5 text-base sm:text-lg leading-relaxed max-w-[58ch]" style={{ color: poster.mutedOnDark }}>
-            I spent four years being the de facto product manager on features that didn't have
-            one, writing the spec, reading the fleet telemetry, making the tradeoff call on
-            decisions that shipped to millions of vehicles. In 2026 I made that role official.
+            I spent four years owning product decisions on features I was also engineering:
+            writing the spec, reading the fleet telemetry, making the tradeoff call on things that
+            shipped to millions of vehicles. In 2026 I made that role official.
           </p>
         </div>
       </header>
@@ -44,14 +44,13 @@ export function PosterAbout() {
           <Section title="The arc">
             <p className="leading-relaxed text-[14.5px] max-w-[68ch]" style={{ color: '#2c2b27' }}>
               I joined Ola Electric in 2022 as a firmware engineer on battery management systems.
-              These modules didn't have a dedicated PM, so somewhere along the way I just started
-              doing that job too: turning a vague "reduce charge time" ask into a shipped
-              optimization framework, or deciding how much peak performance to trade away for rider
-              safety in a thermal model. Fleet data usually told me what to build next before anyone
-              had to ask. I left in April 2026 to make the switch official. Since then I've done a
-              PM fellowship and shipped three solo AI products, brief, PRD, working prototype, the
-              whole thing, because I wanted proof this was a real shift and not just a new title on
-              a resume.
+              I owned those modules end to end, so the product decisions came with them: turning a
+              vague "reduce charge time" ask into a shipped optimization framework, or deciding how
+              much peak performance to trade away for rider safety in a thermal model. Fleet data
+              usually told me what to build next before anyone had to ask. I left in April 2026 to
+              make the switch official. Since then I've been named Top Fellow of my Next Leap cohort
+              and shipped solo AI products, brief, PRD, working prototype, the whole thing, because
+              I wanted proof this was a real shift and not just a new title on a resume.
             </p>
           </Section>
 
@@ -64,6 +63,12 @@ export function PosterAbout() {
                   making the assistant abstain and cite sources rather than ever speculate, since a
                   confident wrong answer in that domain is a trust and regulatory risk. I'd rather
                   cover less and be right every time.
+                </>,
+                <>
+                  I publish the number that makes me look worse. A hand audit of my own AI
+                  classifications on the Google Photos research found only 12 of 20 agreed, which
+                  moved the headline finding from 82% to 76%. It went in the deck, because a
+                  research number nobody has stress-tested isn't a finding yet.
                 </>,
                 <>
                   Mining charging, voltage, temperature, and fault telemetry across the fleet,
@@ -83,7 +88,7 @@ export function PosterAbout() {
                 </>,
                 <>
                   Spec ownership, cross-functional coordination, phased rollout on production
-                  firmware, no PM in the room: that was just Tuesday at Ola for four years. The
+                  firmware across six teams: that was just Tuesday at Ola for four years. The
                   pivot isn't really about the fellowship. It's catching my résumé up to what I was
                   already doing.
                 </>,
@@ -98,9 +103,9 @@ export function PosterAbout() {
 
           <Section title="What I'm still building">
             <p className="leading-relaxed text-[14.5px] max-w-[64ch]" style={{ color: '#2c2b27' }}>
-              Everything I've shipped so far, I've shipped alone, or without a PM in the room. That
-              taught me ownership, but not yet what it's like to drive a roadmap through a team
-              where I'm not also the one writing the code. That's the gap I want the next role to
+              So far I've mostly shipped alone, or as the one person holding both the spec and the
+              code. That taught me ownership, but not yet what it's like to drive a roadmap through
+              a team where I'm not also the one building it. That's the gap I want the next role to
               close.
             </p>
           </Section>

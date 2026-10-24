@@ -39,11 +39,12 @@ export function PosterResume() {
       <article style={{ background: poster.cream, color: poster.ink }} className="px-5 sm:px-11 py-12 sm:py-16">
         <div className="max-w-3xl mx-auto flex flex-col gap-10">
           <p className="leading-relaxed text-[14.5px] max-w-[64ch]" style={{ color: '#2c2b27' }}>
-            Engineer-turned-PM with 3.9 years of end-to-end product ownership at Ola Electric,
-            shipping battery-management features to millions of EVs with no dedicated PM. Scope
-            ambiguous problems into specs, mine fleet telemetry to decide what to build, and drive
-            cross-functional delivery to launch. Pairing deep-tech credibility (BMS, charging,
-            optimization) with hands-on AI product building.
+            Engineer moving into product management. 3.9 years at Ola Electric owning
+            battery-management features end to end across millions of EVs: ₹3 Cr of scrapped
+            hardware recovered, false failure alerts cut 80%, one patent co-filed. Top Fellow at
+            Next Leap. I scope ambiguous problems into specs, mine fleet telemetry to decide what to
+            build, and drive delivery across teams to launch. Now building AI products solo, from
+            problem definition through to a shipped app.
           </p>
 
           <section>

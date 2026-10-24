@@ -2,6 +2,126 @@ import type { CaseStudy } from './types'
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: 'tip-of-my-tongue',
+    title: 'Tip of My Tongue',
+    summary:
+      'People with large photo libraries fail to find a photo monthly or more, and 82% of those failures start on a clue the app misread rather than a clue the person never gave. I reproduced the failure in a controlled test, traced it to a silent guess inside the search, and shipped a version that shows its reading and asks once instead of guessing.',
+    role: 'Graduation project, Next Leap PM Fellowship. Discovery research, root-cause test, solution trade-off and build, solo.',
+    timeframe: 'September 2026',
+    tags: ['0→1', 'User research', 'Root-cause analysis', 'RICE', 'AI/LLM'],
+    isIndependent: false,
+    heroMetric: { label: 'of failures start on a misread clue', value: '82%' },
+    decks: [{ href: '/decks/tip-of-my-tongue-deck.pdf', label: 'View full deck' }],
+    blocks: [
+      { kind: 'heading', text: 'Context' },
+      {
+        kind: 'paragraph',
+        text: 'Graduation project for the Next Leap PM fellowship, September 2026. Self-directed end to end: I picked the problem, built the research pipeline, ran the interviews, reproduced the failure, scored the options, and shipped the MVP. Scope: finding your own photos in Google Photos when the photo is over a year old.',
+      },
+      { kind: 'heading', text: 'The problem, with evidence' },
+      {
+        kind: 'paragraph',
+        text: 'The easy read is that people cannot describe what they are looking for. The data says the opposite. Across 84 verified failure cases, 82% gave the app a fair clue and it was read wrong. Only 3 people could not say what they wanted at all. Nineteen of them remembered words printed in the photo, a bill, a receipt, an ID card, and still failed. Sixteen had forgotten exactly one thing: roughly when.',
+      },
+      {
+        kind: 'metrics',
+        items: [
+          { label: 'Failures on a misread clue', value: '82%' },
+          { label: 'Fail to find a photo monthly or more', value: '52%' },
+          { label: 'Scroll by date instead of searching', value: '74%' },
+          { label: 'Needed several tries', value: '77%' },
+        ],
+      },
+      {
+        kind: 'paragraph',
+        text: 'Two findings from the interviews mattered more than the survey numbers. Face search worked in a 5,000-item library and failed the same task at 75,000, because an old face no longer matches the person today. And three of five people could not find a document they had deliberately photographed, so they had quietly moved their paperwork to Drive. None of that workaround shows up anywhere as a failed search.',
+      },
+      { kind: 'heading', text: 'How the research was built' },
+      {
+        kind: 'list',
+        items: [
+          'Built a discovery engine over 6,551 public posts from Reddit, the Play Store and the App Store across five countries. A keyword filter dropped storage and billing complaints before any model ran, Gemini pulled the same 15 facts out of every remaining post, and a second pass separated real memory failures from bug reports. 1,196 posts kept, 84 real cases. Open-source scrapers, Python, Gemini and Streamlit, all on free tiers, so the whole thing cost nothing.',
+          'Tagged every case to the point in the journey where it broke, so failures could be sliced by photo type, by what the person remembered, and by what they did next rather than just counted.',
+          'Hand-audited 20 of the classifications and published the correction rather than the flattering number: 12 of 20 agreed. The misses were nearly all posts that never describe the photo, and dropping those leaves 51 cases and moves the 82% to 76%. The finding holds, the precision does not.',
+          'Ran the primary research because public posts hear only the people annoyed enough to write one, and 57% of them never say what the photo actually was. Survey of 31, then five interviews where people did real retrieval tasks on their own libraries while I watched.',
+          'Dropped an idea the research killed: four of five people said juggling several Google accounts never hurt them. The fifth said it did, so it went back in as an open question rather than a finding.',
+        ],
+      },
+      { kind: 'heading', text: 'The root cause, reproduced' },
+      {
+        kind: 'paragraph',
+        text: 'I ran the same search four ways against one live library on 28 September 2026. "bill from last august" failed: the app heard August 2026, made it a hard filter, and dropped a bill from August 2025. "bill from august 2025" returned it at once. "around a year ago" also found it, buried in 64 results. Reading the photo was never the problem, it could list the dishes on the bill. The problem is a wall between what you typed and what the app decided you meant, with nothing on screen saying a guess had been made.',
+      },
+      {
+        kind: 'image',
+        src: '/projects/tip-of-my-tongue-rootcause.webp',
+        alt: 'Root cause slide showing four versions of the same search: last august failed, last august at one8 failed, august 2025 found it at once, around a year ago found it buried in 64 results',
+        caption: 'Three ways people say when, and the middle one is the trap. An exact date becomes an exact filter and works. An openly vague phrase becomes a wide range and works. "Last August" gets quietly pinned to one year and fails.',
+      },
+      { kind: 'heading', text: 'Choosing what to build' },
+      {
+        kind: 'paragraph',
+        text: 'Three options, all attacking the same step, differing by what the person can actually give you. The Composer turns your sentence into small editable tags and marks the uncertain ones as preferences rather than filters (RICE 162). The Prompter asks for what memory actually keeps, strongest first, and never asks for a date (RICE 79). The Anchor lets you point at a photo and say "same trip as this one." I wrote the best argument against each one before picking, rather than after.',
+      },
+      {
+        kind: 'list',
+        items: [
+          'The strongest case against the Composer: it is a filter drawer with extra steps, and the research says nobody should build one. The answer: the tags come from the person\'s own words. It is a receipt, not a control panel.',
+          'The strongest case against the Prompter: it is a form, forms feel like work, and nobody asked for one. That is exactly why it scores 5 on confidence, and why it only appears after a blank result or a long pause.',
+          'The strongest case against the Anchor: Google already has "more from this day", so this is browsing renamed. Browsing from a photo does exist. Searching from one does not.',
+          'What stops a competitor copying it: anyone could copy the screen in a week. The hard part is knowing whether "last August" is ambiguous for you, which needs your own history.',
+          'The kill line, written before the build: drop the whole idea if it asks more than 0.4 questions per search, or if fewer than 2 of 3 testers do better than they did on their own.',
+        ],
+      },
+      { kind: 'heading', text: 'What shipped' },
+      {
+        kind: 'paragraph',
+        text: 'You type one sentence. The app shows every clue it took as a chip you can see, change or drop. It asks exactly once, and only when a clue could mean two things: did you mean August 2025 or August 2026? Google Photos picks one silently and drops the other. When nothing matches, you get the closest few plus one question rather than a dead end.',
+      },
+      {
+        kind: 'image',
+        src: '/projects/tip-of-my-tongue-cover.webp',
+        alt: 'MVP slide showing the four-step flow, a worked example of the bill from last august, and the version 1 to version 2 fixes found in testing',
+        caption: 'Three unmoderated test sessions moved it from v1 to v2: the box now keeps what you type, a date alone can no longer surface a photo, and "my sister at the wedding" went from 36 results to 8 with both wedding photos first.',
+      },
+      {
+        kind: 'link',
+        href: 'https://tip-of-my-tongue.streamlit.app',
+        text: 'Open the live app →',
+      },
+      {
+        kind: 'link',
+        href: 'https://app-photos-retrieval-qvlu7ymwqfadwg3siqnqjb.streamlit.app/',
+        text: 'Open the discovery engine and filter the 84 cases yourself →',
+      },
+      { kind: 'heading', text: 'How it would be judged' },
+      {
+        kind: 'paragraph',
+        text: 'The one number: of the times someone hunts for a photo over a year old, how often do they end up opening it. Target +15 points. Under it sit five more, each with the formula and the instrumentation it would need. The one the fix moves directly is "clues read correctly", vague clues kept loose rather than hardened into filters, target 95%, and it is the only measure on the list you cannot game by simply returning more photos. Questions per search is a limit, not a goal, capped at 0.4.',
+      },
+      {
+        kind: 'metrics',
+        items: [
+          { label: 'Photos found when hunting old ones', value: '+15pts' },
+          { label: 'People who type a clue', value: '65%', baseline: '48% today' },
+          { label: 'Vague clues kept loose', value: '95%+' },
+          { label: 'Dead ends rescued', value: '30%+' },
+        ],
+      },
+      { kind: 'heading', text: 'What I would do differently, and what this cannot tell you' },
+      {
+        kind: 'list',
+        items: [
+          'I said I would run three interviewees on their own task in Google Photos first and then here, scored on number of tries. What actually ran was three unmoderated sessions on the new app only, so the comparison that would have proved the improvement is still untested. That is the weakest link in the argument and I would run it first.',
+          'The biggest number in the deck, 52% failing monthly, comes off a 31-person volunteer survey, so I halved the share it suggested before sizing anything with it. The sizing is an order of magnitude, not a measurement.',
+          'A 180-item demo library is not 75,000 photos, and things are easier to find in a small one. The controlled test is one library, mine.',
+          'The risk I would watch first is a confident wrong answer, which hurts more than an empty one. The warning sign is people searching again within a day, and the fix costs screen space and a slower first load.',
+          'External research says the bigger prize is further down the journey, at scanning results. My research says it is earlier, at understanding the words. I have not settled that disagreement, and the deck says so rather than hiding it.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'voice-recovery-coach',
     title: 'Voice Recovery Coach',
     summary:
